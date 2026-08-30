@@ -1,5 +1,5 @@
 /**
- * Gestione Checkout e Conferma Ordine (Dark Theme)
+ * Gestione Checkout e Conferma Ordine Digitale CS2 (Dark Theme)
  */
 
 let currentCheckoutStep = 1;
@@ -10,7 +10,7 @@ let checkoutFormData = {
 
 function openCheckoutModal() {
   if (cartState.length === 0) {
-    showToast('Il tuo carrello hardware è vuoto!', 'warning');
+    showToast('Il tuo carrello è vuoto!', 'warning');
     return;
   }
   
@@ -44,11 +44,8 @@ function goToCheckoutStep(step) {
       firstName: formData.get('firstName'),
       lastName: formData.get('lastName'),
       email: formData.get('email'),
-      phone: formData.get('phone'),
-      address: formData.get('address'),
-      city: formData.get('city'),
-      zip: formData.get('zip'),
-      country: formData.get('country') || 'Italia'
+      discordTag: formData.get('discordTag') || '',
+      steamId: formData.get('steamId') || ''
     };
   }
 
@@ -98,14 +95,14 @@ function renderCheckoutStep() {
     const reviewInfo = document.getElementById('review-shipping-info');
     if (reviewInfo) {
       reviewInfo.innerHTML = `
-        <div class="bg-slate-950 p-4 rounded-xl text-xs border border-slate-800 space-y-1">
+        <div class="bg-slate-950 p-4 rounded-xl text-xs border border-slate-800 space-y-1.5">
           <div class="flex justify-between items-center mb-1">
             <span class="font-bold text-slate-200">${cust.firstName} ${cust.lastName}</span>
             <button type="button" onclick="goToCheckoutStep(1)" class="text-xs text-cyan-400 hover:underline">Modifica</button>
           </div>
-          <p class="text-slate-400"><i class="fas fa-map-marker-alt text-slate-500 mr-2"></i>${cust.address}, ${cust.zip} ${cust.city} (${cust.country})</p>
-          <p class="text-slate-400"><i class="fas fa-envelope text-slate-500 mr-2"></i>${cust.email}</p>
-          <p class="text-slate-400"><i class="fas fa-phone text-slate-500 mr-2"></i>${cust.phone}</p>
+          <p class="text-slate-300"><i class="fas fa-envelope text-cyan-400 mr-2"></i>Email per licenza: <strong class="text-white font-mono">${cust.email}</strong></p>
+          ${cust.discordTag ? `<p class="text-slate-400"><i class="fab fa-discord text-indigo-400 mr-2"></i>Discord: <span class="font-mono text-slate-200">${cust.discordTag}</span></p>` : ''}
+          <p class="text-emerald-400 text-[11px]"><i class="fas fa-bolt text-emerald-400 mr-1.5"></i> Consegna istantanea della License Key & Loader</p>
         </div>
       `;
     }
@@ -117,10 +114,10 @@ function renderCheckoutStep() {
         payText = `<i class="fas fa-credit-card text-indigo-400 mr-2"></i> Carta di Credito (•••• ${checkoutFormData.payment.cardNumber || '4242'})`;
       } else if (checkoutFormData.payment.method === 'paypal') {
         payText = `<i class="fab fa-paypal text-blue-400 mr-2"></i> Account PayPal`;
-      } else if (checkoutFormData.payment.method === 'applepay') {
-        payText = `<i class="fab fa-apple text-slate-300 mr-2"></i> Apple Pay / Google Pay`;
+      } else if (checkoutFormData.payment.method === 'crypto') {
+        payText = `<i class="fab fa-bitcoin text-amber-400 mr-2"></i> Criptovalute (USDT / BTC / LTC)`;
       } else {
-        payText = `<i class="fas fa-truck-loading text-emerald-400 mr-2"></i> Contrassegno (Pagamento alla Consegna)`;
+        payText = `<i class="fab fa-apple text-slate-300 mr-2"></i> Apple Pay / Google Pay`;
       }
       payInfo.innerHTML = `
         <div class="bg-slate-950 p-4 rounded-xl text-xs border border-slate-800 flex justify-between items-center">
@@ -163,10 +160,8 @@ function renderCheckoutSummary() {
         </div>
       ` : ''}
       <div class="flex justify-between text-slate-400">
-        <span>Spedizione</span>
-        <span class="font-mono ${calcs.shippingFee === 0 ? 'text-emerald-400' : 'text-slate-200'}">
-          ${calcs.shippingFee === 0 ? 'Gratuita' : `€${calcs.shippingFee.toFixed(2)}`}
-        </span>
+        <span>Consegna Digitale</span>
+        <span class="font-mono text-emerald-400 font-bold">Istantanea (0.00€)</span>
       </div>
       <div class="flex justify-between text-sm font-extrabold text-white pt-2 border-t border-slate-800">
         <span>Totale da Pagare</span>
@@ -180,12 +175,13 @@ function processCheckoutOrder() {
   const submitBtn = document.getElementById('place-order-btn');
   if (submitBtn) {
     submitBtn.disabled = true;
-    submitBtn.innerHTML = '<i class="fas fa-circle-notch fa-spin mr-2"></i> Elaborazione transazione sicura...';
+    submitBtn.innerHTML = '<i class="fas fa-circle-notch fa-spin mr-2"></i> Generazione License Key sicura...';
   }
 
   setTimeout(() => {
     const calcs = getCartCalculations();
-    const orderNumber = 'NEXA-' + Math.floor(100000 + Math.random() * 900000);
+    const orderNumber = 'CS2-' + Math.floor(100000 + Math.random() * 900000);
+    const licenseKey = 'CS2-' + Array.from({length: 4}, () => Math.random().toString(36).substring(2, 6).toUpperCase()).join('-');
     const orderDate = new Date().toLocaleDateString('it-IT', {
       day: '2-digit',
       month: 'long',
@@ -196,6 +192,7 @@ function processCheckoutOrder() {
 
     const orderData = {
       orderNumber,
+      licenseKey,
       date: orderDate,
       items: [...cartState],
       customer: { ...checkoutFormData.customer },
@@ -203,15 +200,15 @@ function processCheckoutOrder() {
       calculations: calcs
     };
 
-    const orders = JSON.parse(localStorage.getItem('store_orders')) || [];
+    const orders = JSON.parse(localStorage.getItem('cs2_orders')) || [];
     orders.unshift(orderData);
-    localStorage.setItem('store_orders', JSON.stringify(orders));
+    localStorage.setItem('cs2_orders', JSON.stringify(orders));
 
     clearCart();
 
     if (submitBtn) {
       submitBtn.disabled = false;
-      submitBtn.innerHTML = '<i class="fas fa-lock mr-2"></i> Completa Ordine e Paga';
+      submitBtn.innerHTML = '<i class="fas fa-lock mr-2"></i> Completa Ordine e Attiva Licenza';
     }
 
     closeCheckoutModal();
@@ -228,18 +225,25 @@ function openOrderSuccessModal(order) {
     <div class="bg-slate-950 border border-slate-800 rounded-2xl p-5 mb-6 text-left">
       <div class="flex flex-wrap justify-between items-center gap-2 mb-3 pb-3 border-b border-slate-800">
         <div>
-          <span class="text-[10px] text-cyan-400 font-mono font-bold uppercase tracking-wider">Numero Ordine Hardware</span>
+          <span class="text-[10px] text-cyan-400 font-mono font-bold uppercase tracking-wider">Numero Ordine</span>
           <p class="text-base font-mono font-black text-white">${order.orderNumber}</p>
         </div>
         <div class="text-right">
-          <span class="text-[10px] text-slate-500">Data</span>
+          <span class="text-[10px] text-slate-500">Data e Ora</span>
           <p class="text-xs text-slate-400">${order.date}</p>
         </div>
       </div>
 
-      <div class="text-xs text-slate-400 space-y-1 mb-4">
-        <p><strong class="text-slate-200">Destinatario:</strong> ${order.customer.firstName} ${order.customer.lastName} - ${order.customer.address}, ${order.customer.city}</p>
-        <p><strong class="text-slate-200">Email di tracciamento:</strong> ${order.customer.email}</p>
+      <!-- License Key Box -->
+      <div class="bg-indigo-950/50 border border-indigo-500/40 rounded-xl p-3.5 mb-4">
+        <div class="flex justify-between items-center mb-1">
+          <span class="text-[11px] font-bold text-cyan-300 font-mono uppercase"><i class="fas fa-key text-amber-400 mr-1.5"></i> La tua Chiave di Licenza:</span>
+          <button onclick="navigator.clipboard.writeText('${order.licenseKey}'); showToast('Chiave copiata negli appunti!', 'success');" class="text-[11px] text-indigo-300 hover:text-white bg-indigo-600/30 px-2 py-0.5 rounded border border-indigo-400/30">
+            <i class="fas fa-copy mr-1"></i> Copia
+          </button>
+        </div>
+        <p class="font-mono text-sm font-black text-amber-300 tracking-wider">${order.licenseKey}</p>
+        <p class="text-[10px] text-slate-400 mt-1">Inviata anche all'indirizzo: <strong class="text-slate-200">${order.customer.email}</strong></p>
       </div>
 
       <div class="space-y-2 border-t border-slate-800 pt-3">
@@ -252,7 +256,7 @@ function openOrderSuccessModal(order) {
       </div>
 
       <div class="flex justify-between items-center text-sm font-bold text-white pt-3 mt-3 border-t border-slate-800">
-        <span>Totale Transazione</span>
+        <span>Totale Pagato</span>
         <span class="text-base font-mono text-cyan-400">€${order.calculations.total.toFixed(2)}</span>
       </div>
     </div>

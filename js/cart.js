@@ -2,13 +2,14 @@
  * Gestione Carrello, Wishlist e Sconti (LocalStorage)
  */
 
-const FREE_SHIPPING_THRESHOLD = 60.0;
-const STANDARD_SHIPPING_FEE = 4.99;
+const FREE_SHIPPING_THRESHOLD = 0.0; // Consegna digitale sempre gratuita
+const STANDARD_SHIPPING_FEE = 0.0;
 
 const COUPONS = {
+  'CS2WELCOME': { type: 'percent', value: 10, label: 'Sconto Benvenuto CS2 10%' },
   'WELCOME10': { type: 'percent', value: 10, label: 'Sconto Benvenuto 10%' },
-  'OFFERTA20': { type: 'percent', value: 20, label: 'Super Offerta 20%' },
-  'FREESHIP': { type: 'shipping', value: 0, label: 'Spedizione Gratuita' }
+  'CS2FULL': { type: 'percent', value: 20, label: 'Promo Pacchetto Full 20%' },
+  'PROMO15': { type: 'percent', value: 15, label: 'Promo Community 15%' }
 };
 
 // Inizializzazione State
@@ -92,29 +93,24 @@ function getCartCalculations() {
   const subtotal = cartState.reduce((sum, item) => sum + (item.price * item.quantity), 0);
   
   let discountAmount = 0;
-  let isFreeShippingCoupon = false;
 
   if (appliedCoupon && COUPONS[appliedCoupon.code]) {
     const coupon = COUPONS[appliedCoupon.code];
     if (coupon.type === 'percent') {
       discountAmount = (subtotal * coupon.value) / 100;
-    } else if (coupon.type === 'shipping') {
-      isFreeShippingCoupon = true;
     }
   }
 
-  const qualifiesForFreeShipping = subtotal >= FREE_SHIPPING_THRESHOLD || isFreeShippingCoupon || subtotal === 0;
-  const shippingFee = qualifiesForFreeShipping ? 0 : STANDARD_SHIPPING_FEE;
-  const remainingForFreeShipping = Math.max(0, FREE_SHIPPING_THRESHOLD - subtotal);
-  const total = Math.max(0, subtotal - discountAmount + shippingFee);
+  const shippingFee = 0.0; // Consegna digitale istantanea sempre a 0€
+  const total = Math.max(0, subtotal - discountAmount);
 
   return {
     subtotal,
     discountAmount,
     shippingFee,
     total,
-    qualifiesForFreeShipping,
-    remainingForFreeShipping,
+    qualifiesForFreeShipping: true,
+    remainingForFreeShipping: 0,
     freeShippingThreshold: FREE_SHIPPING_THRESHOLD,
     totalItems: cartState.reduce((sum, item) => sum + item.quantity, 0)
   };
@@ -130,7 +126,7 @@ function applyDiscountCoupon(code) {
     };
     saveCoupon();
     saveCart();
-    showToast(`Codice "${cleanCode}" applicato con successo!`, 'success');
+    showToast(`Codice "${cleanCode}" applicato: -${appliedCoupon.value}%!`, 'success');
     return { success: true, message: `Codice ${cleanCode} attivato!` };
   } else {
     showToast(`Codice "${cleanCode}" non valido`, 'error');
@@ -149,40 +145,48 @@ function removeDiscountCoupon() {
 function toggleWishlist(productId) {
   const id = parseInt(productId, 10);
   const index = wishlistState.indexOf(id);
-  const product = getProductById(id);
+  let isAdded = false;
 
   if (index > -1) {
     wishlistState.splice(index, 1);
-    saveWishlist();
-    if (product) showToast(`"${product.name}" rimosso dai preferiti`, 'info');
-    return false;
+    showToast('Rimosso dai preferiti', 'info');
   } else {
     wishlistState.push(id);
-    saveWishlist();
-    if (product) showToast(`"${product.name}" aggiunto ai preferiti! ❤️`, 'success');
-    return true;
+    showToast('Aggiunto ai preferiti!', 'success');
+    isAdded = true;
   }
+
+  saveWishlist();
+  return isAdded;
 }
 
 function isInWishlist(productId) {
   return wishlistState.includes(parseInt(productId, 10));
 }
 
-// Badge counters UI update
+// Update Badges
 function updateCartBadge() {
   const badge = document.getElementById('cart-count-badge');
   if (!badge) return;
-  const totalItems = cartState.reduce((sum, item) => sum + item.quantity, 0);
-  badge.textContent = totalItems;
-  badge.classList.toggle('hidden', totalItems === 0);
-  badge.classList.add('badge-bump');
-  setTimeout(() => badge.classList.remove('badge-bump'), 300);
+
+  const count = cartState.reduce((sum, item) => sum + item.quantity, 0);
+  if (count > 0) {
+    badge.textContent = count;
+    badge.classList.remove('hidden');
+  } else {
+    badge.classList.add('hidden');
+  }
 }
 
 function updateWishlistBadge() {
   const badge = document.getElementById('wishlist-count-badge');
   if (!badge) return;
-  const total = wishlistState.length;
-  badge.textContent = total;
-  badge.classList.toggle('hidden', total === 0);
+
+  const count = wishlistState.length;
+  if (count > 0) {
+    badge.textContent = count;
+    badge.classList.remove('hidden');
+  } else {
+    badge.classList.add('hidden');
+  }
 }

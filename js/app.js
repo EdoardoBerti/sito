@@ -1,10 +1,10 @@
 /**
- * Logica Applicativa Dark Tech, UI Render, Modali e Notifiche
+ * Logica Applicativa CS2 Store, UI Render, Modali e Notifiche
  */
 
 let activeCategory = 'all';
 let currentSort = 'featured';
-let maxPriceFilter = 1000;
+let maxPriceFilter = 100;
 let searchQuery = '';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -71,7 +71,7 @@ function setupEventListeners() {
       e.preventDefault();
       const emailInput = document.getElementById('newsletter-email');
       if (emailInput && emailInput.value) {
-        showToast('Iscrizione confermata! Riceverai il 10% di sconto: WELCOME10', 'success');
+        showToast('Iscrizione confermata! Codice promozionale 10%: CS2WELCOME', 'success');
         emailInput.value = '';
       }
     });
@@ -90,14 +90,14 @@ function setupEventListeners() {
         originalPrice: formData.get('originalPrice') || null,
         badge: formData.get('badge') || 'Nuovo',
         badgeType: formData.get('badgeType') || 'new',
-        image: formData.get('image') || 'https://images.unsplash.com/photo-1595225476474-87563907a212?auto=format&fit=crop&w=800&q=80',
+        image: formData.get('image') || 'https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=800&q=80',
         description: formData.get('description'),
-        stock: formData.get('stock') || 10
+        stock: formData.get('stock') || 99
       });
       closeAddProductModal();
       addProductForm.reset();
       renderProducts();
-      showToast(`Componente "${newProd.name}" aggiunto al catalogo!`, 'success');
+      showToast(`Pacchetto "${newProd.name}" aggiunto al catalogo!`, 'success');
     });
   }
 }
@@ -146,16 +146,16 @@ function renderProducts() {
   }
 
   if (countEl) {
-    countEl.textContent = `${filtered.length} ${filtered.length === 1 ? 'componente disponibile' : 'prodotti hardware disponibili'}`;
+    countEl.textContent = `${filtered.length} ${filtered.length === 1 ? 'pacchetto disponibile' : 'pacchetti CS2 disponibili'}`;
   }
 
   if (filtered.length === 0) {
     container.innerHTML = `
       <div class="col-span-full py-16 text-center">
         <div class="w-16 h-16 bg-slate-900 text-slate-500 rounded-2xl border border-slate-800 flex items-center justify-center mx-auto mb-4 text-2xl">
-          <i class="fas fa-microchip"></i>
+          <i class="fas fa-crosshairs"></i>
         </div>
-        <h3 class="text-lg font-bold text-slate-200 mb-1">Nessun componente trovato</h3>
+        <h3 class="text-lg font-bold text-slate-200 mb-1">Nessun pacchetto trovato</h3>
         <p class="text-xs text-slate-500 max-w-sm mx-auto mb-4">Prova a modificare i filtri di ricerca o ad alzare il limite di prezzo.</p>
         <button onclick="resetFilters()" class="px-4 py-2 bg-indigo-600/20 text-indigo-400 border border-indigo-500/30 text-xs font-bold rounded-xl hover:bg-indigo-600/30 transition-colors">
           Reimposta Filtri
@@ -165,17 +165,17 @@ function renderProducts() {
     return;
   }
 
+  const categoryLabels = {
+    bundles: 'Pacchetto Completo',
+    visuals: 'Visuals & Skin Changer',
+    combat: 'Aimbot & Combat',
+    vip: 'VIP & Lifetime'
+  };
+
   container.innerHTML = filtered.map(product => {
     const inWishlist = isInWishlist(product.id);
     const badgeColor = product.badgeType === 'discount' ? 'badge-discount' : 
                        product.badgeType === 'hot' ? 'badge-hot' : 'badge-new';
-
-    const categoryLabels = {
-      peripherals: 'Periferiche',
-      hardware: 'Hardware & GPU',
-      monitors: 'Display & OLED',
-      setup: 'Accessori Setup'
-    };
 
     return `
       <div class="product-card rounded-2xl overflow-hidden flex flex-col group relative">
@@ -196,7 +196,7 @@ function renderProducts() {
           <!-- Quick View Overlay -->
           <div class="absolute inset-0 bg-slate-950/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-4 backdrop-blur-xs">
             <button onclick="openQuickView(${product.id})" class="px-4 py-2.5 bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs rounded-xl shadow-lg transition-transform transform hover:scale-105 flex items-center gap-2 border border-indigo-400/30">
-              <i class="fas fa-eye text-cyan-300"></i> Scheda Tecnica
+              <i class="fas fa-eye text-cyan-300"></i> Dettagli & Features
             </button>
           </div>
         </div>
@@ -226,11 +226,11 @@ function renderProducts() {
           <div class="mt-4 pt-3 border-t border-slate-800 flex items-center justify-between">
             <div>
               <div class="flex items-baseline gap-2">
-                <span class="text-lg font-black text-white">€${product.price.toFixed(2)}</span>
-                ${product.originalPrice ? `<span class="text-xs text-slate-500 line-through">€${product.originalPrice.toFixed(2)}</span>` : ''}
+                <span class="text-lg font-black text-white font-mono">€${product.price.toFixed(2)}</span>
+                ${product.originalPrice ? `<span class="text-xs text-slate-500 line-through font-mono">€${product.originalPrice.toFixed(2)}</span>` : ''}
               </div>
               <span class="text-[10px] font-semibold text-emerald-400 flex items-center gap-1">
-                <i class="fas fa-check-circle text-[9px]"></i> In Stock (${product.stock})
+                <i class="fas fa-bolt text-[9px]"></i> Consegna Istantanea
               </span>
             </div>
 
@@ -248,7 +248,7 @@ function renderProducts() {
 function resetFilters() {
   activeCategory = 'all';
   searchQuery = '';
-  maxPriceFilter = 1000;
+  maxPriceFilter = 100;
   currentSort = 'featured';
 
   const searchInput = document.getElementById('search-input');
@@ -257,8 +257,8 @@ function resetFilters() {
   const priceSlider = document.getElementById('price-slider');
   const priceLabel = document.getElementById('price-slider-value');
   if (priceSlider && priceLabel) {
-    priceSlider.value = 1000;
-    priceLabel.textContent = '€1000';
+    priceSlider.value = 100;
+    priceLabel.textContent = '€100';
   }
 
   const sortSelect = document.getElementById('sort-select');
@@ -290,7 +290,6 @@ function handleWishlistClick(productId, btn) {
 // ======================= MODALE QUICK VIEW (DARK) =======================
 let quickViewSelectedProduct = null;
 let quickViewQuantity = 1;
-let quickViewSelectedColor = null;
 
 function openQuickView(productId) {
   const product = getProductById(productId);
@@ -298,11 +297,17 @@ function openQuickView(productId) {
 
   quickViewSelectedProduct = product;
   quickViewQuantity = 1;
-  quickViewSelectedColor = product.colors ? product.colors[0] : null;
 
   const modal = document.getElementById('quick-view-modal');
   const content = document.getElementById('quick-view-content');
   if (!modal || !content) return;
+
+  const categoryLabels = {
+    bundles: 'Pacchetto Completo',
+    visuals: 'Visuals & Skin Changer',
+    combat: 'Aimbot & Combat',
+    vip: 'VIP & Lifetime'
+  };
 
   content.innerHTML = `
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 p-6">
@@ -316,7 +321,7 @@ function openQuickView(productId) {
       <div class="flex flex-col justify-between">
         <div>
           <div class="flex items-center justify-between text-xs text-slate-400 mb-2">
-            <span class="uppercase tracking-wider font-mono font-bold text-cyan-400">${product.category}</span>
+            <span class="uppercase tracking-wider font-mono font-bold text-cyan-400">${categoryLabels[product.category] || product.category}</span>
             <div class="flex items-center gap-1">
               <i class="fas fa-star star-rating text-xs"></i>
               <span class="font-bold text-slate-200">${product.rating}</span>
@@ -327,31 +332,19 @@ function openQuickView(productId) {
           <h2 class="text-xl font-black text-white mb-2 leading-snug">${product.name}</h2>
           
           <div class="flex items-baseline gap-3 mb-4">
-            <span class="text-2xl font-black text-indigo-400">€${product.price.toFixed(2)}</span>
-            ${product.originalPrice ? `<span class="text-xs text-slate-500 line-through">€${product.originalPrice.toFixed(2)}</span>` : ''}
+            <span class="text-2xl font-black text-indigo-400 font-mono">€${product.price.toFixed(2)}</span>
+            ${product.originalPrice ? `<span class="text-xs text-slate-500 line-through font-mono">€${product.originalPrice.toFixed(2)}</span>` : ''}
           </div>
 
           <p class="text-xs text-slate-300 leading-relaxed mb-4">${product.description}</p>
 
-          <!-- Specifiche Tecniche -->
+          <!-- Specifiche Tecniche & Features -->
           ${product.features ? `
             <div class="mb-4 bg-slate-950/80 p-3.5 rounded-xl border border-slate-800">
-              <h4 class="text-[11px] font-bold text-cyan-400 uppercase font-mono tracking-wider mb-2">Specifiche Hardware:</h4>
+              <h4 class="text-[11px] font-bold text-cyan-400 uppercase font-mono tracking-wider mb-2">Features Incluse nel Pacchetto:</h4>
               <ul class="text-xs text-slate-300 space-y-1.5">
-                ${product.features.map(f => `<li class="flex items-center gap-2"><i class="fas fa-microchip text-indigo-400 text-[10px]"></i> ${f}</li>`).join('')}
+                ${product.features.map(f => `<li class="flex items-center gap-2"><i class="fas fa-check-circle text-emerald-400 text-[11px]"></i> ${f}</li>`).join('')}
               </ul>
-            </div>
-          ` : ''}
-
-          <!-- Colore / Variante -->
-          ${product.colors ? `
-            <div class="mb-4">
-              <label class="block text-[11px] font-mono uppercase text-slate-400 font-bold mb-2">Variante Colore:</label>
-              <div class="flex gap-2">
-                ${product.colors.map((color, idx) => `
-                  <button type="button" onclick="selectQuickColor('${color}', this)" class="quick-color-btn w-7 h-7 rounded-full border-2 ${idx === 0 ? 'border-indigo-400 ring-2 ring-indigo-500/40' : 'border-slate-700'} transition-all" style="background-color: ${color};" title="${color}"></button>
-                `).join('')}
-              </div>
             </div>
           ` : ''}
         </div>
@@ -361,14 +354,16 @@ function openQuickView(productId) {
           <div class="flex items-center gap-3 mb-3">
             <div class="flex items-center border border-slate-700 rounded-xl bg-slate-950 overflow-hidden">
               <button onclick="changeQuickQty(-1)" class="w-9 h-9 text-slate-400 hover:bg-slate-800 font-bold transition-colors">-</button>
-              <span id="quick-qty-val" class="w-10 text-center text-xs font-bold text-white">1</span>
+              <span id="quick-qty-val" class="w-10 text-center text-xs font-bold text-white font-mono">1</span>
               <button onclick="changeQuickQty(1)" class="w-9 h-9 text-slate-400 hover:bg-slate-800 font-bold transition-colors">+</button>
             </div>
             <button onclick="confirmQuickAddToCart()" class="flex-1 py-3 bg-indigo-600 hover:bg-indigo-500 text-white font-extrabold text-xs rounded-xl shadow-lg shadow-indigo-600/30 transition-all flex items-center justify-center gap-2 border border-indigo-400/40">
               <i class="fas fa-cart-plus"></i> Aggiungi al Carrello
             </button>
           </div>
-          <p class="text-[11px] text-slate-400 text-center"><i class="fas fa-shield-alt text-cyan-400 mr-1"></i> Garanzia Ufficiale 24 Mesi & Spedizione Assicurata</p>
+          <p class="text-[11px] text-emerald-400 text-center flex items-center justify-center gap-1.5">
+            <i class="fas fa-shield-halved text-cyan-400"></i> Consegna Istantanea & Aggiornamenti Gratuiti Inclusi
+          </p>
         </div>
       </div>
     </div>
@@ -386,14 +381,6 @@ function closeQuickView() {
   }
 }
 
-function selectQuickColor(color, btn) {
-  quickViewSelectedColor = color;
-  document.querySelectorAll('.quick-color-btn').forEach(b => {
-    b.className = 'quick-color-btn w-7 h-7 rounded-full border-2 border-slate-700 transition-all';
-  });
-  btn.className = 'quick-color-btn w-7 h-7 rounded-full border-2 border-indigo-400 ring-2 ring-indigo-500/40 transition-all';
-}
-
 function changeQuickQty(delta) {
   quickViewQuantity = Math.max(1, quickViewQuantity + delta);
   const qtyEl = document.getElementById('quick-qty-val');
@@ -402,9 +389,7 @@ function changeQuickQty(delta) {
 
 function confirmQuickAddToCart() {
   if (quickViewSelectedProduct) {
-    const opts = {};
-    if (quickViewSelectedColor) opts.color = quickViewSelectedColor;
-    addToCart(quickViewSelectedProduct, quickViewQuantity, opts);
+    addToCart(quickViewSelectedProduct, quickViewQuantity);
     closeQuickView();
     openCartDrawer();
   }
@@ -437,31 +422,13 @@ function renderCartUI() {
 
   const calcs = getCartCalculations();
 
-  // Spedizione Gratuita
   if (shippingProgressContainer) {
-    if (calcs.subtotal === 0) {
-      shippingProgressContainer.innerHTML = '';
-    } else if (calcs.qualifiesForFreeShipping) {
-      shippingProgressContainer.innerHTML = `
-        <div class="bg-emerald-950/60 border border-emerald-500/40 rounded-xl p-3 text-emerald-300 text-xs flex items-center gap-2">
-          <i class="fas fa-truck-fast text-emerald-400 text-sm"></i>
-          <span>Spedizione Espressa <strong>Gratuita Sbloccata</strong>! 🚀</span>
-        </div>
-      `;
-    } else {
-      const percentage = Math.min(100, Math.round((calcs.subtotal / calcs.freeShippingThreshold) * 100));
-      shippingProgressContainer.innerHTML = `
-        <div class="bg-slate-900/90 border border-indigo-500/30 rounded-xl p-3 text-xs space-y-2">
-          <div class="flex justify-between text-slate-300 font-medium">
-            <span>Aggiungi ancora <strong class="text-cyan-400">€${calcs.remainingForFreeShipping.toFixed(2)}</strong> per la spedizione gratis!</span>
-            <span class="font-mono text-indigo-400 font-bold">${percentage}%</span>
-          </div>
-          <div class="w-full bg-slate-800 rounded-full h-2 overflow-hidden">
-            <div class="bg-gradient-to-r from-indigo-500 to-cyan-400 h-2 rounded-full transition-all duration-300" style="width: ${percentage}%"></div>
-          </div>
-        </div>
-      `;
-    }
+    shippingProgressContainer.innerHTML = `
+      <div class="bg-indigo-950/60 border border-indigo-500/40 rounded-xl p-3 text-cyan-300 text-xs flex items-center gap-2">
+        <i class="fas fa-bolt text-amber-400 text-sm"></i>
+        <span>Consegna Digitale <strong>Istantanea</strong> 24/7 tramite email & pannello! ⚡</span>
+      </div>
+    `;
   }
 
   // Lista articoli
@@ -471,10 +438,10 @@ function renderCartUI() {
         <div class="w-20 h-20 bg-slate-900 border border-slate-800 rounded-2xl flex items-center justify-center text-3xl mb-4 text-slate-600">
           <i class="fas fa-shopping-basket"></i>
         </div>
-        <h4 class="font-bold text-slate-200 text-base mb-1">Carrello Hardware Vuoto</h4>
-        <p class="text-xs text-slate-500 mb-6 max-w-xs">Non hai ancora aggiunto componenti o periferiche.</p>
+        <h4 class="font-bold text-slate-200 text-base mb-1">Carrello CS2 Vuoto</h4>
+        <p class="text-xs text-slate-500 mb-6 max-w-xs">Non hai ancora aggiunto nessun pacchetto CS2.</p>
         <button onclick="closeCartDrawer()" class="px-5 py-2.5 bg-indigo-600 text-white font-bold text-xs rounded-xl shadow hover:bg-indigo-500 transition-colors">
-          Esplora Hardware
+          Esplora Pacchetti CS2
         </button>
       </div>
     `;
@@ -495,7 +462,6 @@ function renderCartUI() {
               <i class="fas fa-trash-alt"></i>
             </button>
           </div>
-          ${item.options?.color ? `<span class="inline-block w-2.5 h-2.5 rounded-full border border-slate-600 align-middle mt-1" style="background-color: ${item.options.color}"></span>` : ''}
         </div>
 
         <div class="flex justify-between items-center mt-2">
@@ -529,8 +495,8 @@ function renderCartUI() {
   }
 
   if (shippingEl) {
-    shippingEl.textContent = calcs.shippingFee === 0 ? 'Gratuita' : `€${calcs.shippingFee.toFixed(2)}`;
-    shippingEl.className = `font-mono font-semibold ${calcs.shippingFee === 0 ? 'text-emerald-400' : 'text-slate-300'}`;
+    shippingEl.textContent = 'Istantanea (0.00€)';
+    shippingEl.className = 'font-mono font-semibold text-emerald-400';
   }
 
   if (totalEl) totalEl.textContent = `€${calcs.total.toFixed(2)}`;
@@ -568,8 +534,8 @@ function renderWishlistUI() {
         <div class="w-16 h-16 bg-slate-900 border border-slate-800 text-rose-400 rounded-2xl flex items-center justify-center text-2xl mb-4">
           <i class="far fa-heart"></i>
         </div>
-        <h4 class="font-bold text-slate-200 text-sm mb-1">Nessun preferito salvato</h4>
-        <p class="text-xs text-slate-500">Salva l'hardware che ti interessa con un click sull'icona cuore!</p>
+        <h4 class="font-bold text-slate-200 text-sm mb-1">Nessun pacchetto salvato</h4>
+        <p class="text-xs text-slate-500">Salva i pacchetti CS2 che ti interessano con un click sull'icona cuore!</p>
       </div>
     `;
     return;

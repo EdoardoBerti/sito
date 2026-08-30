@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NEXA TECH | PC Hardware, Periferiche Gaming & Setup</title>
-  <meta name="description" content="Store online ad alte prestazioni per componenti PC, periferiche gaming ed elettronica per la tua postazione.">
+  <title>CS2 HUB | Pacchetti CS2 ESP, Skin Changer & Full Suite</title>
+  <meta name="description" content="Store ufficiale per pacchetti Counter-Strike 2: CS2 ESP + Skin Changer a 10€, CS2 FULL a 25€, Aimbot e Radar. Consegna istantanea 24/7 e 100% undetected.">
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -35,12 +35,12 @@
   <!-- Custom CSS -->
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="bg-[#030712] text-slate-100 antialiased selection:bg-indigo-500 selection:text-white flex flex-col min-h-screen">
+<body class="bg-[#030712] text-slate-100 antialiased selection:bg-amber-500 selection:text-black flex flex-col min-h-screen">
 
-  <!-- Top Announcement Bar (Dark Cyber) -->
-  <div class="bg-gradient-to-r from-indigo-900 via-slate-900 to-cyan-950 text-slate-200 text-xs font-semibold py-2 px-4 text-center tracking-wide flex items-center justify-center gap-2 border-b border-indigo-500/20">
-    <span class="bg-cyan-500/20 text-cyan-300 px-2 py-0.5 rounded-full text-[10px] uppercase font-mono font-bold border border-cyan-500/30">Promo Tech</span>
-    <span>Codice <strong class="underline font-mono text-cyan-300">WELCOME10</strong> per il 10% di sconto sul tuo nuovo hardware! ⚡</span>
+  <!-- Top Announcement Bar -->
+  <div class="bg-gradient-to-r from-amber-950 via-slate-900 to-indigo-950 text-slate-200 text-xs font-semibold py-2 px-4 text-center tracking-wide flex items-center justify-center gap-2 border-b border-amber-500/20">
+    <span class="bg-amber-500/20 text-amber-300 px-2 py-0.5 rounded-full text-[10px] uppercase font-mono font-bold border border-amber-500/30">CS2 Promo</span>
+    <span>Usa il codice <strong class="underline font-mono text-amber-300">CS2WELCOME</strong> per il 10% di sconto sul tuo pacchetto! ⚡</span>
   </div>
 
   <!-- Header / Navigation Bar (Dark Glass) -->
@@ -50,14 +50,14 @@
         
         <!-- Brand Logo -->
         <a href="#" class="flex items-center gap-2.5 group shrink-0">
-          <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 to-cyan-500 flex items-center justify-center text-white shadow-lg shadow-indigo-600/30 group-hover:scale-105 transition-transform border border-white/20">
-            <i class="fas fa-microchip text-lg text-cyan-100"></i>
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-amber-500 to-orange-600 flex items-center justify-center text-slate-950 shadow-lg shadow-amber-500/30 group-hover:scale-105 transition-transform border border-amber-400/40">
+            <i class="fas fa-crosshairs text-xl text-slate-950"></i>
           </div>
           <div>
             <span class="text-xl font-black tracking-tight text-white flex items-center gap-1">
-              NEXA<span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-cyan-400">TECH</span>
+              CS2<span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-500">HUB</span>
             </span>
-            <span class="block text-[9px] font-mono font-bold text-slate-400 -mt-1 tracking-widest uppercase">High-End PC Hardware</span>
+            <span class="block text-[9px] font-mono font-bold text-slate-400 -mt-1 tracking-widest uppercase">Premium CS2 Packages</span>
           </div>
         </a>
 
@@ -67,8 +67,8 @@
             <input 
               type="text" 
               id="search-input"
-              placeholder="Cerca GPU, tastiere, monitor, SSD..." 
-              class="w-full bg-slate-900/90 text-slate-200 text-xs rounded-xl pl-10 pr-4 py-2.5 border border-slate-800 focus:border-cyan-400 focus:bg-slate-950 focus:outline-none transition-all placeholder:text-slate-500"
+              placeholder="Cerca pacchetti (es. ESP, Skin Changer, FULL, Aimbot)..." 
+              class="w-full bg-slate-900/90 text-slate-200 text-xs rounded-xl pl-10 pr-4 py-2.5 border border-slate-800 focus:border-amber-400 focus:bg-slate-950 focus:outline-none transition-all placeholder:text-slate-500 font-medium"
             >
             <i class="fas fa-search absolute left-3.5 top-3.5 text-slate-500 text-xs"></i>
           </div>
@@ -77,10 +77,10 @@
         <!-- Navigation Actions -->
         <div class="flex items-center gap-2 sm:gap-3">
           
-          <!-- Pulsante Aggiungi Prodotto (Creator tool) -->
-          <button onclick="openAddProductModal()" class="hidden sm:flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-bold bg-indigo-600/20 text-indigo-300 hover:bg-indigo-600/30 border border-indigo-500/40 transition-colors" title="Aggiungi nuovo componente al negozio">
-            <i class="fas fa-plus-circle text-cyan-400"></i>
-            <span>Nuovo Prodotto</span>
+          <!-- Pulsante Aggiungi Pacchetto -->
+          <button onclick="openAddProductModal()" class="hidden sm:flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-bold bg-amber-500/10 text-amber-300 hover:bg-amber-500/20 border border-amber-500/30 transition-colors" title="Aggiungi nuovo pacchetto">
+            <i class="fas fa-plus-circle text-amber-400"></i>
+            <span>Nuovo Pacchetto</span>
           </button>
 
           <!-- Wishlist Button -->
@@ -90,10 +90,10 @@
           </button>
 
           <!-- Cart Button -->
-          <button onclick="openCartDrawer()" class="relative flex items-center gap-2 px-4 py-2 bg-indigo-600 hover:bg-indigo-500 text-white rounded-xl shadow-lg shadow-indigo-600/30 transition-all border border-indigo-400/30" title="Carrello Hardware">
-            <i class="fas fa-cart-shopping text-xs"></i>
-            <span class="hidden sm:inline text-xs font-bold">Carrello</span>
-            <span id="cart-count-badge" class="hidden bg-cyan-400 text-slate-950 text-[10px] font-black w-5 h-5 rounded-full flex items-center justify-center font-mono">0</span>
+          <button onclick="openCartDrawer()" class="relative flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-400 hover:to-orange-500 text-slate-950 font-black rounded-xl shadow-lg shadow-amber-500/20 transition-all border border-amber-400/40" title="Carrello Pacchetti CS2">
+            <i class="fas fa-cart-shopping text-xs text-slate-950"></i>
+            <span class="hidden sm:inline text-xs font-black">Carrello</span>
+            <span id="cart-count-badge" class="hidden bg-slate-950 text-amber-400 text-[10px] font-black w-5 h-5 rounded-full flex items-center justify-center font-mono border border-amber-500/40">0</span>
           </button>
 
         </div>
@@ -105,9 +105,9 @@
         <div class="relative w-full">
           <input 
             type="text" 
-            placeholder="Cerca componenti PC..." 
+            placeholder="Cerca pacchetti CS2..." 
             oninput="searchQuery = this.value.toLowerCase().trim(); renderProducts();"
-            class="w-full bg-slate-900 text-slate-200 text-xs rounded-xl pl-10 pr-4 py-2 border border-slate-800 focus:outline-none focus:border-cyan-400"
+            class="w-full bg-slate-900 text-slate-200 text-xs rounded-xl pl-10 pr-4 py-2 border border-slate-800 focus:outline-none focus:border-amber-400"
           >
           <i class="fas fa-search absolute left-3.5 top-3 text-slate-500 text-xs"></i>
         </div>
@@ -116,76 +116,86 @@
     </div>
   </header>
 
-  <!-- Hero Section (Dark Tech Aesthetic) -->
-  <section class="relative overflow-hidden bg-gradient-to-b from-[#060a17] via-[#090d1e] to-[#030712] py-14 sm:py-24 border-b border-slate-800/80">
+  <!-- Hero Section -->
+  <section class="relative overflow-hidden bg-gradient-to-b from-[#090d18] via-[#0d1222] to-[#030712] py-14 sm:py-20 border-b border-slate-800/80">
     <!-- Neon Glow Accents -->
-    <div class="absolute -top-32 -left-32 w-[30rem] h-[30rem] bg-indigo-600/20 rounded-full blur-3xl pointer-events-none"></div>
-    <div class="absolute -bottom-32 -right-32 w-[30rem] h-[30rem] bg-cyan-500/15 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute -top-32 -left-32 w-[32rem] h-[32rem] bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute -bottom-32 -right-32 w-[32rem] h-[32rem] bg-indigo-600/15 rounded-full blur-3xl pointer-events-none"></div>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
         
         <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
-          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-400/30 text-cyan-300 text-xs font-mono backdrop-blur-md">
-            <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
-            Nuove Release Hardware & Setup 2026
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-amber-500/10 border border-amber-400/30 text-amber-300 text-xs font-mono backdrop-blur-md">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            Patch CS2 2026 Ready • 100% Undetected
           </div>
 
           <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight text-white">
-            Porta il Tuo Setup PC al <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-indigo-300 to-purple-400">Livello Successivo</span>
+            Domina su CS2 con i <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-orange-400 to-red-500">Migliori Pacchetti</span>
           </h1>
 
-          <p class="text-xs sm:text-sm text-slate-400 max-w-xl mx-auto lg:mx-0 leading-relaxed font-light">
-            Componenti hardware selezionati, GPU di ultima generazione, tastiere custom e monitor OLED ad alto refresh rate con spedizione rapida assicurata e garanzia diretta.
+          <p class="text-xs sm:text-sm text-slate-300 max-w-xl mx-auto lg:mx-0 leading-relaxed font-normal">
+            Potenzia il tuo gameplay con i pacchetti completi per <strong>Counter-Strike 2</strong>: Wallhack Box/Glow ESP, Skin Changer con tutti i coltelli e guanti, Legit Aimbot e Web Radar. Consegna digitale istantanea della License Key in 30 secondi.
           </p>
 
           <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
-            <a href="#catalogo" class="px-6 py-3.5 bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-extrabold rounded-xl shadow-lg shadow-indigo-600/40 transition-all transform hover:-translate-y-0.5 flex items-center gap-2 border border-indigo-400/30">
-              <i class="fas fa-gamepad text-cyan-300"></i> Esplora Hardware
+            <a href="#catalogo" class="px-6 py-3.5 bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-400 hover:to-orange-500 text-slate-950 text-xs font-black rounded-xl shadow-lg shadow-amber-500/20 transition-all transform hover:-translate-y-0.5 flex items-center gap-2 border border-amber-400/40">
+              <i class="fas fa-fire text-slate-950"></i> Scopri i Pacchetti CS2
             </a>
-            <button onclick="applyDiscountCoupon('WELCOME10')" class="px-6 py-3.5 bg-slate-900/80 hover:bg-slate-800 text-slate-200 text-xs font-bold rounded-xl border border-slate-700 backdrop-blur-md transition-all flex items-center gap-2">
-              <i class="fas fa-tag text-cyan-400"></i> Riscatta Coupon 10%
+            <button onclick="applyDiscountCoupon('CS2WELCOME')" class="px-6 py-3.5 bg-slate-900/80 hover:bg-slate-800 text-slate-200 text-xs font-bold rounded-xl border border-slate-700 backdrop-blur-md transition-all flex items-center gap-2">
+              <i class="fas fa-tag text-amber-400"></i> Riscatta Coupon 10%
             </button>
           </div>
 
-          <!-- Hardware Specs Counters -->
-          <div class="grid grid-cols-3 gap-4 pt-6 border-t border-slate-800 text-left">
-            <div>
-              <p class="text-lg sm:text-2xl font-black text-cyan-400 font-mono">240Hz+</p>
-              <p class="text-[11px] text-slate-400">Display & OLED</p>
-            </div>
-            <div>
-              <p class="text-lg sm:text-2xl font-black text-indigo-400 font-mono">24/48h</p>
-              <p class="text-[11px] text-slate-400">Spedizione Rapida</p>
-            </div>
+          <!-- Specs Counters -->
+          <div class="grid grid-cols-3 gap-4 pt-6 border-t border-slate-800/80 text-left">
             <div>
               <p class="text-lg sm:text-2xl font-black text-emerald-400 font-mono">100%</p>
-              <p class="text-[11px] text-slate-400">Garanzia Italia 24M</p>
+              <p class="text-[11px] text-slate-400">Undetected & Sicuro</p>
+            </div>
+            <div>
+              <p class="text-lg sm:text-2xl font-black text-amber-400 font-mono">0 Sec</p>
+              <p class="text-[11px] text-slate-400">Consegna Key Istantanea</p>
+            </div>
+            <div>
+              <p class="text-lg sm:text-2xl font-black text-indigo-400 font-mono">24/7</p>
+              <p class="text-[11px] text-slate-400">Supporto Discord & Setup</p>
             </div>
           </div>
 
         </div>
 
-        <!-- Hero Featured Hardware Showcase -->
+        <!-- Hero Featured Card (CS2 ESP + Skin Changer a 10€) -->
         <div class="lg:col-span-5 flex justify-center">
           <div class="relative w-full max-w-sm">
-            <div class="glass-panel-dark p-5 rounded-3xl shadow-2xl border border-slate-800 text-slate-100">
+            <div class="glass-panel-dark p-5 rounded-3xl shadow-2xl border border-amber-500/30 text-slate-100 relative">
+              <div class="absolute -top-3 right-6 bg-gradient-to-r from-amber-500 to-orange-500 text-slate-950 font-black text-[10px] font-mono uppercase px-3 py-1 rounded-full shadow-lg">
+                Offerta Più Venduta 🔥
+              </div>
               <div class="relative rounded-2xl overflow-hidden aspect-video mb-4 bg-slate-950 border border-slate-800">
-                <img src="https://images.unsplash.com/photo-1595225476474-87563907a212?auto=format&fit=crop&w=800&q=80" alt="Tastiera Meccanica Custom RGB" class="w-full h-full object-cover">
-                <span class="absolute top-3 left-3 bg-indigo-600 text-white text-[10px] font-mono font-black px-2.5 py-0.5 rounded-full uppercase tracking-wider shadow">Top Seller</span>
+                <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=800&q=80" alt="CS2 ESP + Skin Changer" class="w-full h-full object-cover">
+                <span class="absolute top-3 left-3 bg-indigo-600 text-white text-[10px] font-mono font-black px-2.5 py-0.5 rounded-full uppercase tracking-wider shadow">10€ Promo</span>
               </div>
               <div class="flex justify-between items-start mb-2">
                 <div>
-                  <h3 class="font-bold text-sm text-white">Tastiera Custom Wireless 75%</h3>
-                  <p class="text-xs text-slate-400">Gasket Mount & Switch Lubrificati</p>
+                  <h3 class="font-black text-base text-white">CS2 ESP + Skin Changer</h3>
+                  <p class="text-xs text-slate-400">Wallhack Box 3D + Tutti i Coltelli & Guanti</p>
                 </div>
                 <div class="text-right">
-                  <span class="text-base font-black font-mono text-cyan-400">€139.99</span>
-                  <span class="block text-[11px] text-slate-500 line-through font-mono">€169.99</span>
+                  <span class="text-xl font-black font-mono text-amber-400">€10.00</span>
+                  <span class="block text-[11px] text-slate-500 line-through font-mono">€15.00</span>
                 </div>
               </div>
-              <button onclick="handleAddToCart(1)" class="w-full py-2.5 bg-indigo-600 hover:bg-indigo-500 text-white rounded-xl text-xs font-bold shadow transition-colors flex items-center justify-center gap-2 mt-3 border border-indigo-400/30">
-                <i class="fas fa-cart-plus"></i> Aggiungi al Carrello Subito
+
+              <div class="space-y-1 my-3 text-[11px] text-slate-300">
+                <p class="flex items-center gap-1.5"><i class="fas fa-check text-emerald-400 text-[10px]"></i> Box/Glow ESP & Skeleton nemici</p>
+                <p class="flex items-center gap-1.5"><i class="fas fa-check text-emerald-400 text-[10px]"></i> Skin Changer con tutti i coltelli Doppler & Fade</p>
+                <p class="flex items-center gap-1.5"><i class="fas fa-check text-emerald-400 text-[10px]"></i> Stream-Proof & VACnet bypass</p>
+              </div>
+
+              <button onclick="handleAddToCart(1); openCartDrawer();" class="w-full py-2.5 bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-400 hover:to-orange-500 text-slate-950 font-black rounded-xl text-xs shadow-lg transition-all flex items-center justify-center gap-2 mt-3 border border-amber-400/40">
+                <i class="fas fa-cart-plus"></i> Acquista a 10€ Subito
               </button>
             </div>
           </div>
@@ -195,48 +205,48 @@
     </div>
   </section>
 
-  <!-- Key Tech Perks Bar -->
+  <!-- Key Perks Bar -->
   <section class="bg-slate-950 border-b border-slate-800 py-6">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center sm:text-left">
         
         <div class="flex flex-col sm:flex-row items-center gap-3">
-          <div class="w-11 h-11 rounded-2xl bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 flex items-center justify-center text-lg shrink-0">
-            <i class="fas fa-truck-fast"></i>
+          <div class="w-11 h-11 rounded-2xl bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center text-lg shrink-0">
+            <i class="fas fa-bolt"></i>
           </div>
           <div>
-            <h4 class="text-xs font-bold text-slate-200">Spedizione Veloce</h4>
-            <p class="text-[11px] text-slate-500">Gratis sopra i 60€ in 24/48h</p>
-          </div>
-        </div>
-
-        <div class="flex flex-col sm:flex-row items-center gap-3">
-          <div class="w-11 h-11 rounded-2xl bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 flex items-center justify-center text-lg shrink-0">
-            <i class="fas fa-shield-halved"></i>
-          </div>
-          <div>
-            <h4 class="text-xs font-bold text-slate-200">Garanzia Italia 2 Anni</h4>
-            <p class="text-[11px] text-slate-500">Supporto e reso 30 giorni</p>
-          </div>
-        </div>
-
-        <div class="flex flex-col sm:flex-row items-center gap-3">
-          <div class="w-11 h-11 rounded-2xl bg-purple-500/10 border border-purple-500/20 text-purple-400 flex items-center justify-center text-lg shrink-0">
-            <i class="fas fa-microchip"></i>
-          </div>
-          <div>
-            <h4 class="text-xs font-bold text-slate-200">Hardware Certificato</h4>
-            <p class="text-[11px] text-slate-500">Componenti originali 100%</p>
+            <h4 class="text-xs font-bold text-slate-200">Consegna Istantanea 24/7</h4>
+            <p class="text-[11px] text-slate-500">License Key immediata via email</p>
           </div>
         </div>
 
         <div class="flex flex-col sm:flex-row items-center gap-3">
           <div class="w-11 h-11 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center text-lg shrink-0">
+            <i class="fas fa-shield-halved"></i>
+          </div>
+          <div>
+            <h4 class="text-xs font-bold text-slate-200">100% Undetected</h4>
+            <p class="text-[11px] text-slate-500">Firma polimorfa & auto-update</p>
+          </div>
+        </div>
+
+        <div class="flex flex-col sm:flex-row items-center gap-3">
+          <div class="w-11 h-11 rounded-2xl bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 flex items-center justify-center text-lg shrink-0">
+            <i class="fas fa-sliders"></i>
+          </div>
+          <div>
+            <h4 class="text-xs font-bold text-slate-200">Setup 1-Click Rapido</h4>
+            <p class="text-[11px] text-slate-500">Loader intuitivo e guida in italiano</p>
+          </div>
+        </div>
+
+        <div class="flex flex-col sm:flex-row items-center gap-3">
+          <div class="w-11 h-11 rounded-2xl bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 flex items-center justify-center text-lg shrink-0">
             <i class="fas fa-lock"></i>
           </div>
           <div>
             <h4 class="text-xs font-bold text-slate-200">Pagamenti Cifrati SSL</h4>
-            <p class="text-[11px] text-slate-500">Carte, PayPal o Contrassegno</p>
+            <p class="text-[11px] text-slate-500">Carta, PayPal e Crypto</p>
           </div>
         </div>
 
@@ -250,17 +260,17 @@
     <!-- Section Header -->
     <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
       <div>
-        <span class="text-xs font-mono font-bold uppercase tracking-wider text-cyan-400">Componenti & Periferiche</span>
-        <h2 class="text-2xl sm:text-3xl font-black text-white tracking-tight">Catalogo Hardware</h2>
-        <p id="products-count" class="text-xs text-slate-400 mt-1">Caricamento componenti in corso...</p>
+        <span class="text-xs font-mono font-bold uppercase tracking-wider text-amber-400">Catalogo Ufficiale</span>
+        <h2 class="text-2xl sm:text-3xl font-black text-white tracking-tight">Pacchetti Counter-Strike 2</h2>
+        <p id="products-count" class="text-xs text-slate-400 mt-1">Caricamento pacchetti in corso...</p>
       </div>
 
       <!-- Controls & Sorting -->
       <div class="flex flex-wrap items-center gap-3">
         <div class="flex items-center gap-2 bg-slate-900/90 px-3 py-2 rounded-xl border border-slate-800 text-xs">
           <span class="text-slate-400 font-medium whitespace-nowrap">Prezzo max:</span>
-          <input type="range" id="price-slider" min="30" max="1000" value="1000" step="10" class="w-24 accent-indigo-500 cursor-pointer">
-          <span id="price-slider-value" class="font-mono font-bold text-cyan-400 w-12 text-right">€1000</span>
+          <input type="range" id="price-slider" min="5" max="100" value="100" step="5" class="w-24 accent-amber-500 cursor-pointer">
+          <span id="price-slider-value" class="font-mono font-bold text-amber-400 w-12 text-right">€100</span>
         </div>
 
         <div class="flex items-center gap-2 bg-slate-900/90 px-3 py-2 rounded-xl border border-slate-800 text-xs">
@@ -275,39 +285,39 @@
       </div>
     </div>
 
-    <!-- Category Chips Tabs (Tech) -->
+    <!-- Category Chips Tabs -->
     <div class="flex items-center gap-2 overflow-x-auto pb-4 mb-6 scrollbar-none">
       <button data-category="all" onclick="setCategory('all')" class="category-btn px-4 py-2 rounded-full text-xs sm:text-sm font-bold bg-indigo-600 text-white shadow-lg shadow-indigo-600/30 border border-indigo-500 transition-all whitespace-nowrap">
-        Tutti i Componenti
+        Tutti i Pacchetti
       </button>
-      <button data-category="peripherals" onclick="setCategory('peripherals')" class="category-btn px-4 py-2 rounded-full text-xs sm:text-sm font-medium bg-slate-900/80 text-slate-400 hover:text-white hover:bg-slate-800 border border-slate-800 transition-all whitespace-nowrap">
-        <i class="fas fa-keyboard mr-1.5 text-cyan-400"></i> Periferiche & Audio
+      <button data-category="bundles" onclick="setCategory('bundles')" class="category-btn px-4 py-2 rounded-full text-xs sm:text-sm font-medium bg-slate-900/80 text-slate-400 hover:text-white hover:bg-slate-800 border border-slate-800 transition-all whitespace-nowrap">
+        <i class="fas fa-box-open mr-1.5 text-amber-400"></i> Pacchetti Completi (FULL)
       </button>
-      <button data-category="hardware" onclick="setCategory('hardware')" class="category-btn px-4 py-2 rounded-full text-xs sm:text-sm font-medium bg-slate-900/80 text-slate-400 hover:text-white hover:bg-slate-800 border border-slate-800 transition-all whitespace-nowrap">
-        <i class="fas fa-microchip mr-1.5 text-purple-400"></i> Hardware & GPU
+      <button data-category="visuals" onclick="setCategory('visuals')" class="category-btn px-4 py-2 rounded-full text-xs sm:text-sm font-medium bg-slate-900/80 text-slate-400 hover:text-white hover:bg-slate-800 border border-slate-800 transition-all whitespace-nowrap">
+        <i class="fas fa-eye mr-1.5 text-cyan-400"></i> Visuals & Skin Changer
       </button>
-      <button data-category="monitors" onclick="setCategory('monitors')" class="category-btn px-4 py-2 rounded-full text-xs sm:text-sm font-medium bg-slate-900/80 text-slate-400 hover:text-white hover:bg-slate-800 border border-slate-800 transition-all whitespace-nowrap">
-        <i class="fas fa-desktop mr-1.5 text-indigo-400"></i> Display & OLED
+      <button data-category="combat" onclick="setCategory('combat')" class="category-btn px-4 py-2 rounded-full text-xs sm:text-sm font-medium bg-slate-900/80 text-slate-400 hover:text-white hover:bg-slate-800 border border-slate-800 transition-all whitespace-nowrap">
+        <i class="fas fa-crosshairs mr-1.5 text-red-400"></i> Aimbot & Combat
       </button>
-      <button data-category="setup" onclick="setCategory('setup')" class="category-btn px-4 py-2 rounded-full text-xs sm:text-sm font-medium bg-slate-900/80 text-slate-400 hover:text-white hover:bg-slate-800 border border-slate-800 transition-all whitespace-nowrap">
-        <i class="fas fa-lightbulb mr-1.5 text-amber-400"></i> Accessori Setup
+      <button data-category="vip" onclick="setCategory('vip')" class="category-btn px-4 py-2 rounded-full text-xs sm:text-sm font-medium bg-slate-900/80 text-slate-400 hover:text-white hover:bg-slate-800 border border-slate-800 transition-all whitespace-nowrap">
+        <i class="fas fa-crown mr-1.5 text-amber-400"></i> VIP Lifetime
       </button>
     </div>
 
     <!-- Products Grid -->
-    <div id="products-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+    <div id="products-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
       <!-- Inseriti dinamicamente da app.js -->
     </div>
 
   </main>
 
-  <!-- Customer Reviews / Testimonials (Dark) -->
+  <!-- Customer Reviews / Testimonials -->
   <section class="bg-[#070b16] border-t border-slate-800/80 py-16">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center max-w-2xl mx-auto mb-12">
-        <span class="text-xs font-mono font-bold uppercase tracking-wider text-cyan-400">Feedback Community</span>
-        <h2 class="text-2xl sm:text-3xl font-black text-white tracking-tight mt-1">Recensioni Hardware</h2>
-        <p class="text-xs text-slate-400 mt-2">Cosa dicono i gamer e i creator che hanno assemblato la loro postazione con noi.</p>
+        <span class="text-xs font-mono font-bold uppercase tracking-wider text-amber-400">Feedback Community</span>
+        <h2 class="text-2xl sm:text-3xl font-black text-white tracking-tight mt-1">Cosa Dicono i Giocatori CS2</h2>
+        <p class="text-xs text-slate-400 mt-2">Recensioni verificate da parte di utenti che utilizzano i nostri pacchetti in Premier e Matchmaking.</p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -316,12 +326,12 @@
           <div class="flex items-center gap-1 text-amber-400 text-xs">
             <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
           </div>
-          <p class="text-xs text-slate-300 italic leading-relaxed">"La tastiera custom ha un feedback di digitazione spettacolare con gli switch lubrificati. Arrivata perfettamente imballata in 24 ore."</p>
+          <p class="text-xs text-slate-300 italic leading-relaxed">"Ho preso il pacchetto ESP + Skin Changer a 10€: qualità assurda! Il Karambit Doppler e i guanti si vedono perfettamente in game e l'ESP con glow è pulitissimo senza cali di FPS."</p>
           <div class="flex items-center gap-3 pt-2 border-t border-slate-800">
-            <div class="w-8 h-8 rounded-full bg-indigo-600/30 text-indigo-300 font-mono font-bold text-xs flex items-center justify-center border border-indigo-500/30">GT</div>
+            <div class="w-8 h-8 rounded-full bg-amber-500/20 text-amber-300 font-mono font-bold text-xs flex items-center justify-center border border-amber-500/30">MK</div>
             <div>
-              <p class="text-xs font-bold text-white">Giacomo T.</p>
-              <p class="text-[10px] text-emerald-400"><i class="fas fa-check-circle"></i> Setup Builder Verificato</p>
+              <p class="text-xs font-bold text-white">Marco K.</p>
+              <p class="text-[10px] text-emerald-400"><i class="fas fa-check-circle"></i> Acquirente ESP + Skin Changer</p>
             </div>
           </div>
         </div>
@@ -330,12 +340,12 @@
           <div class="flex items-center gap-1 text-amber-400 text-xs">
             <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
           </div>
-          <p class="text-xs text-slate-300 italic leading-relaxed">"La RTX 4070 Super è una bomba per il 1440p ad alti frame rate. Temperature bassissime e silenziosità assoluta."</p>
+          <p class="text-xs text-slate-300 italic leading-relaxed">"Il pacchetto CS2 FULL a 25€ è completo di tutto. L'aimbot legit con smoothing è totalmente invisibile agli spettatori e il Web Radar condiviso con il mio team ci fa vincere ogni round!"</p>
           <div class="flex items-center gap-3 pt-2 border-t border-slate-800">
-            <div class="w-8 h-8 rounded-full bg-cyan-600/30 text-cyan-300 font-mono font-bold text-xs flex items-center justify-center border border-cyan-500/30">EL</div>
+            <div class="w-8 h-8 rounded-full bg-indigo-500/20 text-indigo-300 font-mono font-bold text-xs flex items-center justify-center border border-indigo-500/30">LV</div>
             <div>
-              <p class="text-xs font-bold text-white">Enrico L.</p>
-              <p class="text-[10px] text-emerald-400"><i class="fas fa-check-circle"></i> Acquirente Verificato</p>
+              <p class="text-xs font-bold text-white">Luca V.</p>
+              <p class="text-[10px] text-emerald-400"><i class="fas fa-check-circle"></i> Acquirente CS2 FULL Suite</p>
             </div>
           </div>
         </div>
@@ -344,11 +354,11 @@
           <div class="flex items-center gap-1 text-amber-400 text-xs">
             <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
           </div>
-          <p class="text-xs text-slate-300 italic leading-relaxed">"Il monitor OLED 240Hz ha trasformato completamente la mia esperienza competitiva. Contrasto infinito e zero ghosting!"</p>
+          <p class="text-xs text-slate-300 italic leading-relaxed">"Key arrivata subito dopo il pagamento via email. Configurazione facilissima in 1 minuto grazie al loader e al supporto Discord super disponibile."</p>
           <div class="flex items-center gap-3 pt-2 border-t border-slate-800">
-            <div class="w-8 h-8 rounded-full bg-purple-600/30 text-purple-300 font-mono font-bold text-xs flex items-center justify-center border border-purple-500/30">FD</div>
+            <div class="w-8 h-8 rounded-full bg-cyan-500/20 text-cyan-300 font-mono font-bold text-xs flex items-center justify-center border border-cyan-500/30">AD</div>
             <div>
-              <p class="text-xs font-bold text-white">Fabio D.</p>
+              <p class="text-xs font-bold text-white">Alessandro D.</p>
               <p class="text-[10px] text-emerald-400"><i class="fas fa-check-circle"></i> Acquirente Verificato</p>
             </div>
           </div>
@@ -358,43 +368,53 @@
     </div>
   </section>
 
-  <!-- FAQ Section (Dark) -->
+  <!-- FAQ Section -->
   <section class="bg-[#030712] border-t border-slate-800 py-16">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-10">
-        <span class="text-xs font-mono font-bold uppercase tracking-wider text-cyan-400">Domande Hardware</span>
-        <h2 class="text-2xl sm:text-3xl font-black text-white tracking-tight mt-1">FAQ & Assistenza Tecnica</h2>
+        <span class="text-xs font-mono font-bold uppercase tracking-wider text-amber-400">Domande Frequenti</span>
+        <h2 class="text-2xl sm:text-3xl font-black text-white tracking-tight mt-1">FAQ & Supporto CS2</h2>
       </div>
 
       <div class="space-y-3">
         
         <div class="border border-slate-800 rounded-2xl overflow-hidden bg-slate-900/60">
           <button onclick="toggleFaq(this)" class="w-full px-5 py-4 text-left font-bold text-slate-200 text-xs sm:text-sm flex justify-between items-center hover:bg-slate-800/50 transition-colors">
-            <span>Come vengono imballati e spediti i componenti hardware sensibili?</span>
+            <span>Come ricevo la mia License Key e come si attiva?</span>
             <i class="fas fa-chevron-down faq-icon text-slate-500 text-xs transition-transform duration-200"></i>
           </button>
           <div class="px-5 py-4 text-xs text-slate-400 bg-slate-950 border-t border-slate-800 leading-relaxed hidden">
-            Tutti i componenti (GPU, monitor, dissipatori e periferiche) vengono spediti con doppio imballaggio antiurto rinforzato e protezione antistatica (ESD), tramite corriere espresso con tracciamento in tempo reale.
+            Subito dopo il pagamento la tua License Key univoca viene mostrata a schermo e recapitata sulla tua email. Ti basterà aprire il nostro loader leggero, inserire la chiave e premere "Inietta" prima o durante l'avvio di Counter-Strike 2.
           </div>
         </div>
 
         <div class="border border-slate-800 rounded-2xl overflow-hidden bg-slate-900/60">
           <button onclick="toggleFaq(this)" class="w-full px-5 py-4 text-left font-bold text-slate-200 text-xs sm:text-sm flex justify-between items-center hover:bg-slate-800/50 transition-colors">
-            <span>I prodotti godono della garanzia ufficiale?</span>
+            <span>I pacchetti sono sicuri e compatibili con Windows 10 e 11?</span>
             <i class="fas fa-chevron-down faq-icon text-slate-500 text-xs transition-transform duration-200"></i>
           </button>
           <div class="px-5 py-4 text-xs text-slate-400 bg-slate-950 border-t border-slate-800 leading-relaxed hidden">
-            Sì, tutti i prodotti commercializzati sono 100% originali e coperti da garanzia legale europea di 24 mesi con assistenza diretta in Italia e sostituzione rapida in caso di difetti di fabbrica.
+            Sì, tutti i nostri moduli sono testati e compatibili al 100% con Windows 10 e Windows 11 (tutte le build). Il sistema utilizza iniezioni crittografate polimorfe per garantire massima sicurezza e invisibilità da VACnet.
           </div>
         </div>
 
         <div class="border border-slate-800 rounded-2xl overflow-hidden bg-slate-900/60">
           <button onclick="toggleFaq(this)" class="w-full px-5 py-4 text-left font-bold text-slate-200 text-xs sm:text-sm flex justify-between items-center hover:bg-slate-800/50 transition-colors">
-            <span>Posso pagare alla consegna (contrassegno) o in rate?</span>
+            <span>Cosa succede quando Valve rilascia un aggiornamento per CS2?</span>
             <i class="fas fa-chevron-down faq-icon text-slate-500 text-xs transition-transform duration-200"></i>
           </button>
           <div class="px-5 py-4 text-xs text-slate-400 bg-slate-950 border-t border-slate-800 leading-relaxed hidden">
-            Certamente. Puoi selezionare il pagamento in contanti alla consegna direttamente nel modulo di checkout, oppure utilizzare PayPal per rateizzare l'importo in 3 comode rate senza interessi.
+            Il nostro team aggiorna gli offset in tempo reale. Il loader esegue l'auto-update automatico all'apertura, senza che tu debba riscaricare o riconfigurare nulla.
+          </div>
+        </div>
+
+        <div class="border border-slate-800 rounded-2xl overflow-hidden bg-slate-900/60">
+          <button onclick="toggleFaq(this)" class="w-full px-5 py-4 text-left font-bold text-slate-200 text-xs sm:text-sm flex justify-between items-center hover:bg-slate-800/50 transition-colors">
+            <span>Quali sono le differenze tra il pacchetto da 10€ e quello da 25€?</span>
+            <i class="fas fa-chevron-down faq-icon text-slate-500 text-xs transition-transform duration-200"></i>
+          </button>
+          <div class="px-5 py-4 text-xs text-slate-400 bg-slate-950 border-t border-slate-800 leading-relaxed hidden">
+            Il pacchetto <strong>CS2 ESP + Skin Changer (10€)</strong> include l'intero comparto visivo (Wallhack, Box/Glow ESP, Skeleton) e lo sblocco di tutti i coltelli/guanti/skin. Il pacchetto <strong>CS2 FULL (25€)</strong> aggiunge anche l'Aimbot Legit & Rage, il Triggerbot magnetico, il Recoil Control System (RCS) e il Web Radar condiviso.
           </div>
         </div>
 
@@ -402,61 +422,61 @@
     </div>
   </section>
 
-  <!-- Newsletter Banner (Dark Cyber) -->
-  <section class="bg-gradient-to-r from-indigo-950 via-slate-900 to-cyan-950 text-white py-12 relative overflow-hidden border-t border-slate-800">
+  <!-- Newsletter / Discord Banner -->
+  <section class="bg-gradient-to-r from-amber-950 via-slate-900 to-indigo-950 text-white py-12 relative overflow-hidden border-t border-slate-800">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-      <h3 class="text-2xl sm:text-3xl font-black mb-2 text-white">Entra nel NEXA Hardware Club</h3>
-      <p class="text-xs sm:text-sm text-slate-400 max-w-md mx-auto mb-6">Drop esclusivi di schede video, offerte lampo su tastiere custom e codici sconto in anteprima.</p>
+      <h3 class="text-2xl sm:text-3xl font-black mb-2 text-white">Rimani Aggiornato sui Drop & Patch CS2</h3>
+      <p class="text-xs sm:text-sm text-slate-400 max-w-md mx-auto mb-6">Ricevi avvisi istantanei sulle nuove build, sconti esclusivi e codici promozionali.</p>
 
       <form id="newsletter-form" class="flex flex-col sm:flex-row gap-2 max-w-md mx-auto">
         <input 
           type="email" 
           id="newsletter-email"
-          placeholder="Inserisci la tua email per il coupon..." 
+          placeholder="Inserisci la tua email per il coupon 10%..." 
           required
-          class="flex-1 px-4 py-3 rounded-xl text-slate-100 text-xs bg-slate-950 border border-slate-700 focus:outline-none focus:border-cyan-400 font-mono"
+          class="flex-1 px-4 py-3 rounded-xl text-slate-100 text-xs bg-slate-950 border border-slate-700 focus:outline-none focus:border-amber-400 font-mono"
         >
-        <button type="submit" class="px-6 py-3 bg-indigo-600 hover:bg-indigo-500 text-white font-extrabold text-xs rounded-xl shadow-lg shadow-indigo-600/30 transition-colors border border-indigo-400/30">
-          Iscriviti Ora
+        <button type="submit" class="px-6 py-3 bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-400 hover:to-orange-500 text-slate-950 font-black text-xs rounded-xl shadow-lg shadow-amber-500/20 transition-colors border border-amber-400/40">
+          Iscriviti Subito
         </button>
       </form>
     </div>
   </section>
 
-  <!-- Footer (Dark) -->
+  <!-- Footer -->
   <footer class="bg-slate-950 text-slate-400 text-xs pt-12 pb-8 border-t border-slate-900">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
         
         <div>
           <span class="text-lg font-black text-white flex items-center gap-1.5 mb-3">
-            <i class="fas fa-microchip text-cyan-400"></i> NEXA<span class="text-indigo-400">TECH</span>
+            <i class="fas fa-crosshairs text-amber-400"></i> CS2<span class="text-orange-400">HUB</span>
           </span>
-          <p class="text-slate-400 leading-relaxed text-xs mb-4">Lo store di riferimento per appassionati di gaming, assemblatori PC e creatori di contenuti.</p>
+          <p class="text-slate-400 leading-relaxed text-xs mb-4">La piattaforma di riferimento per pacchetti software, visuals e tools avanzati dedicati a Counter-Strike 2.</p>
           <div class="flex gap-3 text-slate-400">
-            <a href="#" class="w-8 h-8 rounded-lg bg-slate-900 flex items-center justify-center hover:text-cyan-400 hover:bg-slate-800 transition-colors"><i class="fab fa-discord"></i></a>
-            <a href="#" class="w-8 h-8 rounded-lg bg-slate-900 flex items-center justify-center hover:text-cyan-400 hover:bg-slate-800 transition-colors"><i class="fab fa-youtube"></i></a>
-            <a href="#" class="w-8 h-8 rounded-lg bg-slate-900 flex items-center justify-center hover:text-cyan-400 hover:bg-slate-800 transition-colors"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="w-8 h-8 rounded-lg bg-slate-900 flex items-center justify-center hover:text-indigo-400 hover:bg-slate-800 transition-colors"><i class="fab fa-discord"></i></a>
+            <a href="#" class="w-8 h-8 rounded-lg bg-slate-900 flex items-center justify-center hover:text-amber-400 hover:bg-slate-800 transition-colors"><i class="fab fa-youtube"></i></a>
+            <a href="#" class="w-8 h-8 rounded-lg bg-slate-900 flex items-center justify-center hover:text-cyan-400 hover:bg-slate-800 transition-colors"><i class="fab fa-telegram"></i></a>
           </div>
         </div>
 
         <div>
-          <h4 class="font-bold text-white uppercase tracking-wider mb-3">Categorie Hardware</h4>
+          <h4 class="font-bold text-white uppercase tracking-wider mb-3">Pacchetti CS2</h4>
           <ul class="space-y-2 text-slate-400">
-            <li><button onclick="setCategory('peripherals'); window.location.hash='catalogo';" class="hover:text-cyan-400 transition-colors">Tastiere & Mouse</button></li>
-            <li><button onclick="setCategory('hardware'); window.location.hash='catalogo';" class="hover:text-cyan-400 transition-colors">Schede Video RTX & SSD</button></li>
-            <li><button onclick="setCategory('monitors'); window.location.hash='catalogo';" class="hover:text-cyan-400 transition-colors">Monitor Gaming OLED</button></li>
-            <li><button onclick="setCategory('setup'); window.location.hash='catalogo';" class="hover:text-cyan-400 transition-colors">Accessori & Lightbar</button></li>
+            <li><button onclick="setCategory('visuals'); window.location.hash='catalogo';" class="hover:text-amber-400 transition-colors">CS2 ESP + Skin Changer (10€)</button></li>
+            <li><button onclick="setCategory('bundles'); window.location.hash='catalogo';" class="hover:text-amber-400 transition-colors">CS2 FULL Suite (25€)</button></li>
+            <li><button onclick="setCategory('combat'); window.location.hash='catalogo';" class="hover:text-amber-400 transition-colors">Legit Aimbot & Triggerbot</button></li>
+            <li><button onclick="setCategory('vip'); window.location.hash='catalogo';" class="hover:text-amber-400 transition-colors">VIP Lifetime Pass</button></li>
           </ul>
         </div>
 
         <div>
-          <h4 class="font-bold text-white uppercase tracking-wider mb-3">Assistenza Clienti</h4>
+          <h4 class="font-bold text-white uppercase tracking-wider mb-3">Assistenza & Info</h4>
           <ul class="space-y-2 text-slate-400">
-            <li><a href="#catalogo" class="hover:text-cyan-400 transition-colors">Tracciamento Spedizione</a></li>
-            <li><a href="#catalogo" class="hover:text-cyan-400 transition-colors">Garanzia & Resi Hardware</a></li>
-            <li><a href="#catalogo" class="hover:text-cyan-400 transition-colors">Termini di Servizio</a></li>
-            <li><a href="#catalogo" class="hover:text-cyan-400 transition-colors">Informativa Privacy</a></li>
+            <li><a href="#catalogo" class="hover:text-amber-400 transition-colors">Guida all'installazione</a></li>
+            <li><a href="#catalogo" class="hover:text-amber-400 transition-colors">Stato Undetected Server</a></li>
+            <li><a href="#catalogo" class="hover:text-amber-400 transition-colors">Termini di Servizio</a></li>
+            <li><a href="#catalogo" class="hover:text-amber-400 transition-colors">Privacy Policy</a></li>
           </ul>
         </div>
 
@@ -466,39 +486,39 @@
             <i class="fab fa-cc-visa hover:text-white transition-colors" title="Visa"></i>
             <i class="fab fa-cc-mastercard hover:text-white transition-colors" title="Mastercard"></i>
             <i class="fab fa-cc-paypal hover:text-white transition-colors" title="PayPal"></i>
+            <i class="fab fa-bitcoin hover:text-white transition-colors" title="Bitcoin / USDT"></i>
             <i class="fab fa-cc-apple-pay hover:text-white transition-colors" title="Apple Pay"></i>
-            <i class="fab fa-google-pay hover:text-white transition-colors" title="Google Pay"></i>
           </div>
-          <p class="text-[11px] text-slate-500 font-mono">Cifratura SSL 256-Bit attiva.</p>
+          <p class="text-[11px] text-slate-500 font-mono">Consegna automatica istantanea 24/7.</p>
         </div>
 
       </div>
 
       <div class="pt-8 border-t border-slate-900 flex flex-col sm:flex-row justify-between items-center gap-4 text-[11px] text-slate-500 font-mono">
-        <p>&copy; 2026 NEXA TECH. Tutti i diritti riservati.</p>
-        <p>Progettato per massime prestazioni grafiche e velocità.</p>
+        <p>&copy; 2026 CS2 HUB. Tutti i diritti riservati.</p>
+        <p>Progettato per massime prestazioni, stabilità FPS e sicurezza.</p>
       </div>
     </div>
   </footer>
 
-  <!-- ======================== CARRELLO SLIDE-OVER DRAWER (DARK) ======================== -->
+  <!-- ======================== CARRELLO SLIDE-OVER DRAWER ======================== -->
   <div id="cart-backdrop" class="fixed inset-0 bg-slate-950/80 backdrop-blur-xs z-50 hidden transition-opacity" onclick="closeCartDrawer()"></div>
   <div id="cart-drawer" class="fixed top-0 right-0 h-full w-full max-w-md bg-slate-950 border-l border-slate-800 z-50 shadow-2xl flex flex-col transform translate-x-full transition-transform duration-300 ease-in-out">
     
     <!-- Drawer Header -->
     <div class="p-4 sm:p-5 border-b border-slate-800 flex items-center justify-between">
       <div class="flex items-center gap-2">
-        <div class="w-8 h-8 rounded-xl bg-indigo-600/20 text-indigo-400 border border-indigo-500/30 flex items-center justify-center text-sm font-bold">
+        <div class="w-8 h-8 rounded-xl bg-amber-500/20 text-amber-400 border border-amber-500/30 flex items-center justify-center text-sm font-bold">
           <i class="fas fa-cart-shopping"></i>
         </div>
-        <h3 class="font-extrabold text-base text-white">Carrello Hardware</h3>
+        <h3 class="font-black text-base text-white">Carrello Pacchetti CS2</h3>
       </div>
       <button onclick="closeCartDrawer()" class="w-8 h-8 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 flex items-center justify-center transition-colors">
         <i class="fas fa-times"></i>
       </button>
     </div>
 
-    <!-- Free Shipping Progress Bar -->
+    <!-- Free Delivery Progress Bar -->
     <div id="cart-shipping-progress" class="px-5 pt-3"></div>
 
     <!-- Items List -->
@@ -514,8 +534,8 @@
         <input 
           type="text" 
           id="coupon-input" 
-          placeholder="Codice promo (es. WELCOME10)" 
-          class="flex-1 bg-slate-950 border border-slate-700 rounded-xl px-3 py-2 text-xs uppercase font-mono font-semibold text-slate-200 focus:outline-none focus:border-cyan-400"
+          placeholder="Codice promo (es. CS2WELCOME)" 
+          class="flex-1 bg-slate-950 border border-slate-700 rounded-xl px-3 py-2 text-xs uppercase font-mono font-semibold text-slate-200 focus:outline-none focus:border-amber-400"
         >
         <button type="submit" class="px-4 py-2 bg-indigo-600 hover:bg-indigo-500 text-white rounded-xl text-xs font-bold transition-colors">
           Applica
@@ -533,25 +553,25 @@
           <span id="cart-discount-amount" class="font-mono font-bold">-€0.00</span>
         </div>
         <div class="flex justify-between">
-          <span>Spedizione stimata:</span>
-          <span id="cart-shipping" class="font-mono text-slate-200">€0.00</span>
+          <span>Consegna Digitale:</span>
+          <span id="cart-shipping" class="font-mono text-emerald-400 font-bold">Istantanea (0.00€)</span>
         </div>
         <div class="flex justify-between text-sm font-black text-white pt-2 border-t border-slate-800">
           <span>Totale Ordine:</span>
-          <span id="cart-total" class="text-cyan-400 font-mono text-base">€0.00</span>
+          <span id="cart-total" class="text-amber-400 font-mono text-base font-black">€0.00</span>
         </div>
       </div>
 
       <!-- Checkout Button -->
-      <button onclick="openCheckoutModal()" class="w-full py-3.5 bg-indigo-600 hover:bg-indigo-500 text-white font-extrabold text-xs rounded-xl shadow-lg shadow-indigo-600/40 transition-all flex items-center justify-center gap-2 border border-indigo-400/40">
-        <i class="fas fa-lock text-xs"></i> Procedi al Checkout Sicuro
+      <button onclick="openCheckoutModal()" class="w-full py-3.5 bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-400 hover:to-orange-500 text-slate-950 font-black text-xs rounded-xl shadow-lg shadow-amber-500/20 transition-all flex items-center justify-center gap-2 border border-amber-400/40">
+        <i class="fas fa-lock text-xs text-slate-950"></i> Procedi al Checkout Sicuro
       </button>
 
     </div>
 
   </div>
 
-  <!-- ======================== WISHLIST SLIDE-OVER DRAWER (DARK) ======================== -->
+  <!-- ======================== WISHLIST SLIDE-OVER DRAWER ======================== -->
   <div id="wishlist-backdrop" class="fixed inset-0 bg-slate-950/80 backdrop-blur-xs z-50 hidden transition-opacity" onclick="closeWishlistDrawer()"></div>
   <div id="wishlist-drawer" class="fixed top-0 right-0 h-full w-full max-w-md bg-slate-950 border-l border-slate-800 z-50 shadow-2xl flex flex-col transform translate-x-full transition-transform duration-300 ease-in-out">
     <div class="p-4 sm:p-5 border-b border-slate-800 flex items-center justify-between">
@@ -559,7 +579,7 @@
         <div class="w-8 h-8 rounded-xl bg-rose-500/20 text-rose-400 border border-rose-500/30 flex items-center justify-center text-sm font-bold">
           <i class="fas fa-heart"></i>
         </div>
-        <h3 class="font-extrabold text-base text-white">Preferiti Hardware</h3>
+        <h3 class="font-extrabold text-base text-white">Pacchetti Preferiti</h3>
       </div>
       <button onclick="closeWishlistDrawer()" class="w-8 h-8 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 flex items-center justify-center transition-colors">
         <i class="fas fa-times"></i>
@@ -570,7 +590,7 @@
     </div>
   </div>
 
-  <!-- ======================== QUICK VIEW MODAL (DARK) ======================== -->
+  <!-- ======================== QUICK VIEW MODAL ======================== -->
   <div id="quick-view-modal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
     <div class="bg-slate-900 border border-slate-800 rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl relative animate-scale-up">
       <button onclick="closeQuickView()" class="absolute top-4 right-4 z-20 w-8 h-8 rounded-full bg-slate-800 hover:bg-slate-700 text-slate-300 flex items-center justify-center transition-colors">
@@ -580,15 +600,17 @@
     </div>
   </div>
 
-  <!-- ======================== CHECKOUT MULTI-STEP MODAL (DARK) ======================== -->
+  <!-- ======================== CHECKOUT MULTI-STEP MODAL ======================== -->
   <div id="checkout-modal" class="fixed inset-0 bg-slate-950/85 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
     <div class="bg-slate-900 border border-slate-800 rounded-3xl max-w-3xl w-full max-h-[95vh] overflow-y-auto shadow-2xl relative animate-scale-up flex flex-col text-slate-100">
       
       <!-- Checkout Header -->
       <div class="p-6 border-b border-slate-800 flex items-center justify-between">
         <div>
-          <h2 class="text-xl font-extrabold text-white">Checkout Sicuro Hardware</h2>
-          <p class="text-xs text-slate-400">Completa il tuo ordine in 3 passaggi crittografati</p>
+          <h2 class="text-xl font-extrabold text-white flex items-center gap-2">
+            <i class="fas fa-shield-halved text-amber-400"></i> Checkout Sicuro CS2
+          </h2>
+          <p class="text-xs text-slate-400">Attivazione e consegna istantanea della License Key in 3 passaggi</p>
         </div>
         <button onclick="closeCheckoutModal()" class="w-8 h-8 rounded-full bg-slate-800 hover:bg-slate-700 text-slate-300 flex items-center justify-center transition-colors">
           <i class="fas fa-times"></i>
@@ -598,8 +620,8 @@
       <!-- Step Indicators -->
       <div class="px-6 py-4 bg-slate-950 border-b border-slate-800 flex items-center justify-around">
         <div class="flex items-center gap-2">
-          <div id="step-indicator-1" class="w-8 h-8 rounded-full bg-indigo-600 text-white flex items-center justify-center font-bold text-xs">1</div>
-          <span class="text-xs font-bold text-slate-200">Spedizione</span>
+          <div id="step-indicator-1" class="w-8 h-8 rounded-full bg-amber-500 text-slate-950 flex items-center justify-center font-bold text-xs">1</div>
+          <span class="text-xs font-bold text-slate-200">Dati Utente</span>
         </div>
         <div class="w-8 sm:w-16 h-0.5 bg-slate-800"></div>
         <div class="flex items-center gap-2">
@@ -609,7 +631,7 @@
         <div class="w-8 sm:w-16 h-0.5 bg-slate-800"></div>
         <div class="flex items-center gap-2">
           <div id="step-indicator-3" class="w-8 h-8 rounded-full bg-slate-800 text-slate-500 border border-slate-700 flex items-center justify-center font-bold text-xs">3</div>
-          <span class="text-xs font-bold text-slate-400">Conferma</span>
+          <span class="text-xs font-bold text-slate-400">Attivazione</span>
         </div>
       </div>
 
@@ -621,47 +643,38 @@
           
           <!-- STEP 1 -->
           <div id="checkout-step-1" class="space-y-4">
-            <h3 class="text-xs font-bold text-cyan-400 uppercase font-mono tracking-wider">Indirizzo di Spedizione</h3>
+            <h3 class="text-xs font-bold text-amber-400 uppercase font-mono tracking-wider">Recapito della Licenza CS2</h3>
             <form id="shipping-form" class="space-y-3 text-xs" onsubmit="event.preventDefault(); goToCheckoutStep(2);">
               <div class="grid grid-cols-2 gap-3">
                 <div>
-                  <label class="block font-semibold text-slate-300 mb-1">Nome *</label>
-                  <input type="text" name="firstName" required placeholder="Mario" value="Mario" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-2.5 text-slate-100 focus:outline-none focus:border-cyan-400">
+                  <label class="block font-semibold text-slate-300 mb-1">Nome o Nickname *</label>
+                  <input type="text" name="firstName" required placeholder="Mario" value="Mario" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-2.5 text-slate-100 focus:outline-none focus:border-amber-400">
                 </div>
                 <div>
-                  <label class="block font-semibold text-slate-300 mb-1">Cognome *</label>
-                  <input type="text" name="lastName" required placeholder="Rossi" value="Rossi" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-2.5 text-slate-100 focus:outline-none focus:border-cyan-400">
+                  <label class="block font-semibold text-slate-300 mb-1">Cognome</label>
+                  <input type="text" name="lastName" placeholder="Rossi" value="Rossi" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-2.5 text-slate-100 focus:outline-none focus:border-amber-400">
                 </div>
               </div>
 
               <div>
-                <label class="block font-semibold text-slate-300 mb-1">Email per Tracciamento *</label>
-                <input type="email" name="email" required placeholder="mario.rossi@example.com" value="mario.rossi@example.com" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-2.5 text-slate-100 focus:outline-none focus:border-cyan-400">
-              </div>
-
-              <div>
-                <label class="block font-semibold text-slate-300 mb-1">Telefono *</label>
-                <input type="tel" name="phone" required placeholder="+39 340 1234567" value="+39 340 1234567" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-2.5 text-slate-100 focus:outline-none focus:border-cyan-400">
-              </div>
-
-              <div>
-                <label class="block font-semibold text-slate-300 mb-1">Indirizzo Completo *</label>
-                <input type="text" name="address" required placeholder="Via Roma, 10" value="Via Roma, 10" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-2.5 text-slate-100 focus:outline-none focus:border-cyan-400">
+                <label class="block font-semibold text-slate-300 mb-1">Email per Ricezione License Key *</label>
+                <input type="email" name="email" required placeholder="tuamail@gmail.com" value="gamer@example.com" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-2.5 text-slate-100 focus:outline-none focus:border-amber-400 font-mono">
+                <span class="text-[10px] text-slate-500 mt-1 block">La chiave di attivazione e il link di download verranno spediti a questo indirizzo.</span>
               </div>
 
               <div class="grid grid-cols-2 gap-3">
                 <div>
-                  <label class="block font-semibold text-slate-300 mb-1">Città *</label>
-                  <input type="text" name="city" required placeholder="Milano" value="Milano" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-2.5 text-slate-100 focus:outline-none focus:border-cyan-400">
+                  <label class="block font-semibold text-slate-300 mb-1">Discord Tag (opzionale)</label>
+                  <input type="text" name="discordTag" placeholder="utente#0000" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-2.5 text-slate-100 focus:outline-none focus:border-amber-400">
                 </div>
                 <div>
-                  <label class="block font-semibold text-slate-300 mb-1">CAP *</label>
-                  <input type="text" name="zip" required placeholder="20121" value="20121" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-2.5 text-slate-100 focus:outline-none focus:border-cyan-400">
+                  <label class="block font-semibold text-slate-300 mb-1">SteamID (opzionale)</label>
+                  <input type="text" name="steamId" placeholder="76561198..." class="w-full bg-slate-950 border border-slate-800 rounded-xl p-2.5 text-slate-100 focus:outline-none focus:border-amber-400">
                 </div>
               </div>
 
               <div class="pt-4">
-                <button type="submit" class="w-full py-3 bg-indigo-600 hover:bg-indigo-500 text-white font-bold rounded-xl shadow-lg transition-colors border border-indigo-400/30">
+                <button type="submit" class="w-full py-3 bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-400 hover:to-orange-500 text-slate-950 font-black rounded-xl shadow-lg transition-colors border border-amber-400/40">
                   Continua al Pagamento &rarr;
                 </button>
               </div>
@@ -670,13 +683,13 @@
 
           <!-- STEP 2 -->
           <div id="checkout-step-2" class="space-y-4 hidden">
-            <h3 class="text-xs font-bold text-cyan-400 uppercase font-mono tracking-wider">Metodo di Pagamento</h3>
+            <h3 class="text-xs font-bold text-amber-400 uppercase font-mono tracking-wider">Metodo di Pagamento</h3>
             
             <div class="space-y-2 text-xs">
-              <label class="flex items-center gap-3 p-3.5 rounded-xl border border-indigo-500 bg-indigo-950/40 cursor-pointer">
-                <input type="radio" name="paymentMethod" value="card" checked class="accent-cyan-400" onchange="document.getElementById('card-fields').classList.remove('hidden')">
+              <label class="flex items-center gap-3 p-3.5 rounded-xl border border-amber-500 bg-amber-950/30 cursor-pointer">
+                <input type="radio" name="paymentMethod" value="card" checked class="accent-amber-400" onchange="document.getElementById('card-fields').classList.remove('hidden')">
                 <div class="flex-1 flex items-center justify-between">
-                  <span class="font-bold text-slate-200"><i class="fas fa-credit-card text-cyan-400 mr-2"></i> Carta di Credito / Debito</span>
+                  <span class="font-bold text-slate-200"><i class="fas fa-credit-card text-amber-400 mr-2"></i> Carta di Credito / Debito / Postepay</span>
                   <div class="flex gap-1 text-slate-400">
                     <i class="fab fa-cc-visa text-sm"></i>
                     <i class="fab fa-cc-mastercard text-sm"></i>
@@ -685,23 +698,23 @@
               </label>
 
               <label class="flex items-center gap-3 p-3.5 rounded-xl border border-slate-800 hover:bg-slate-800/50 cursor-pointer">
-                <input type="radio" name="paymentMethod" value="paypal" class="accent-cyan-400" onchange="document.getElementById('card-fields').classList.add('hidden')">
+                <input type="radio" name="paymentMethod" value="paypal" class="accent-amber-400" onchange="document.getElementById('card-fields').classList.add('hidden')">
                 <div class="flex-1 flex items-center justify-between">
-                  <span class="font-bold text-slate-200"><i class="fab fa-paypal text-blue-400 mr-2"></i> PayPal (Paga in 3 rate)</span>
+                  <span class="font-bold text-slate-200"><i class="fab fa-paypal text-blue-400 mr-2"></i> PayPal (Istantaneo)</span>
                 </div>
               </label>
 
               <label class="flex items-center gap-3 p-3.5 rounded-xl border border-slate-800 hover:bg-slate-800/50 cursor-pointer">
-                <input type="radio" name="paymentMethod" value="applepay" class="accent-cyan-400" onchange="document.getElementById('card-fields').classList.add('hidden')">
+                <input type="radio" name="paymentMethod" value="crypto" class="accent-amber-400" onchange="document.getElementById('card-fields').classList.add('hidden')">
+                <div class="flex-1 flex items-center justify-between">
+                  <span class="font-bold text-slate-200"><i class="fab fa-bitcoin text-amber-400 mr-2"></i> Crypto (USDT, Bitcoin, LTC)</span>
+                </div>
+              </label>
+
+              <label class="flex items-center gap-3 p-3.5 rounded-xl border border-slate-800 hover:bg-slate-800/50 cursor-pointer">
+                <input type="radio" name="paymentMethod" value="applepay" class="accent-amber-400" onchange="document.getElementById('card-fields').classList.add('hidden')">
                 <div class="flex-1 flex items-center justify-between">
                   <span class="font-bold text-slate-200"><i class="fab fa-apple text-slate-300 mr-2"></i> Apple Pay / Google Pay</span>
-                </div>
-              </label>
-
-              <label class="flex items-center gap-3 p-3.5 rounded-xl border border-slate-800 hover:bg-slate-800/50 cursor-pointer">
-                <input type="radio" name="paymentMethod" value="cod" class="accent-cyan-400" onchange="document.getElementById('card-fields').classList.add('hidden')">
-                <div class="flex-1 flex items-center justify-between">
-                  <span class="font-bold text-slate-200"><i class="fas fa-truck-loading text-emerald-400 mr-2"></i> Contrassegno (Pagamento alla Consegna)</span>
                 </div>
               </label>
             </div>
@@ -712,7 +725,7 @@
                 <div>
                   <label class="block font-semibold text-slate-300 mb-1">Numero Carta *</label>
                   <div class="relative">
-                    <input type="text" id="cardNumber" placeholder="4242 •••• •••• 4242" value="4242 8888 9999 4242" required class="w-full bg-slate-950 border border-slate-800 rounded-xl p-2.5 pl-9 text-slate-100 focus:outline-none focus:border-cyan-400 font-mono">
+                    <input type="text" id="cardNumber" placeholder="4242 •••• •••• 4242" value="4242 8888 9999 4242" required class="w-full bg-slate-950 border border-slate-800 rounded-xl p-2.5 pl-9 text-slate-100 focus:outline-none focus:border-amber-400 font-mono">
                     <i class="fas fa-lock absolute left-3 top-3 text-slate-500 text-xs"></i>
                   </div>
                 </div>
@@ -720,11 +733,11 @@
                 <div class="grid grid-cols-2 gap-3">
                   <div>
                     <label class="block font-semibold text-slate-300 mb-1">Scadenza *</label>
-                    <input type="text" placeholder="MM/AA" value="12/28" required class="w-full bg-slate-950 border border-slate-800 rounded-xl p-2.5 text-center text-slate-100 focus:outline-none focus:border-cyan-400 font-mono">
+                    <input type="text" placeholder="MM/AA" value="12/28" required class="w-full bg-slate-950 border border-slate-800 rounded-xl p-2.5 text-center text-slate-100 focus:outline-none focus:border-amber-400 font-mono">
                   </div>
                   <div>
                     <label class="block font-semibold text-slate-300 mb-1">CVV / CVC *</label>
-                    <input type="password" maxlength="4" placeholder="123" value="888" required class="w-full bg-slate-950 border border-slate-800 rounded-xl p-2.5 text-center text-slate-100 focus:outline-none focus:border-cyan-400 font-mono">
+                    <input type="password" maxlength="4" placeholder="123" value="888" required class="w-full bg-slate-950 border border-slate-800 rounded-xl p-2.5 text-center text-slate-100 focus:outline-none focus:border-amber-400 font-mono">
                   </div>
                 </div>
 
@@ -732,7 +745,7 @@
                   <button type="button" onclick="goToCheckoutStep(1)" class="w-1/3 py-3 bg-slate-800 hover:bg-slate-700 text-slate-300 font-bold rounded-xl transition-colors">
                     &larr; Indietro
                   </button>
-                  <button type="submit" class="flex-1 py-3 bg-indigo-600 hover:bg-indigo-500 text-white font-bold rounded-xl shadow transition-colors border border-indigo-400/30">
+                  <button type="submit" class="flex-1 py-3 bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-400 hover:to-orange-500 text-slate-950 font-black rounded-xl shadow transition-colors border border-amber-400/40">
                     Rivedi Ordine &rarr;
                   </button>
                 </div>
@@ -743,22 +756,22 @@
 
           <!-- STEP 3 -->
           <div id="checkout-step-3" class="space-y-4 hidden">
-            <h3 class="text-xs font-bold text-cyan-400 uppercase font-mono tracking-wider">Riepilogo e Conferma</h3>
+            <h3 class="text-xs font-bold text-amber-400 uppercase font-mono tracking-wider">Riepilogo e Attivazione Licenza</h3>
 
             <div id="review-shipping-info"></div>
             <div id="review-payment-info"></div>
 
-            <div class="bg-indigo-950/40 border border-indigo-500/30 rounded-xl p-3 text-[11px] text-cyan-300 flex items-start gap-2">
-              <i class="fas fa-info-circle text-cyan-400 mt-0.5"></i>
-              <span>Cliccando su "Completa Ordine e Paga", la transazione verrà autorizzata in sicurezza e riceverai il codice d'ordine.</span>
+            <div class="bg-amber-950/40 border border-amber-500/30 rounded-xl p-3 text-[11px] text-amber-300 flex items-start gap-2">
+              <i class="fas fa-bolt text-amber-400 mt-0.5"></i>
+              <span>Cliccando su "Completa Ordine e Attiva Licenza", la transazione verrà autorizzata in sicurezza e genereremo all'istante la tua License Key.</span>
             </div>
 
             <div class="flex gap-3 pt-2">
               <button type="button" onclick="goToCheckoutStep(2)" class="w-1/3 py-3.5 bg-slate-800 hover:bg-slate-700 text-slate-300 font-bold text-xs rounded-xl transition-colors">
                 &larr; Indietro
               </button>
-              <button type="button" id="place-order-btn" onclick="processCheckoutOrder()" class="flex-1 py-3.5 bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold text-xs rounded-xl shadow-lg shadow-emerald-600/30 transition-all flex items-center justify-center gap-2 border border-emerald-400/30">
-                <i class="fas fa-lock"></i> Completa Ordine e Paga
+              <button type="button" id="place-order-btn" onclick="processCheckoutOrder()" class="flex-1 py-3.5 bg-emerald-600 hover:bg-emerald-500 text-white font-black text-xs rounded-xl shadow-lg shadow-emerald-600/30 transition-all flex items-center justify-center gap-2 border border-emerald-400/30">
+                <i class="fas fa-lock"></i> Completa Ordine e Attiva Licenza
               </button>
             </div>
           </div>
@@ -768,7 +781,7 @@
         <!-- Right Summary Sidebar -->
         <div class="p-6 md:col-span-5 bg-slate-950 border-t md:border-t-0 md:border-l border-slate-800 flex flex-col justify-between">
           <div>
-            <h4 class="text-xs font-bold text-slate-400 uppercase font-mono tracking-wider mb-3">Componenti nel Carrello</h4>
+            <h4 class="text-xs font-bold text-slate-400 uppercase font-mono tracking-wider mb-3">Pacchetti Selezionati</h4>
             <div id="checkout-items-list" class="max-h-60 overflow-y-auto space-y-2 pr-1"></div>
           </div>
           <div id="checkout-totals"></div>
@@ -779,14 +792,14 @@
     </div>
   </div>
 
-  <!-- ======================== ORDER SUCCESS MODAL (DARK) ======================== -->
+  <!-- ======================== ORDER SUCCESS MODAL ======================== -->
   <div id="order-success-modal" class="fixed inset-0 bg-slate-950/85 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
     <div class="bg-slate-900 border border-slate-800 rounded-3xl max-w-md w-full p-6 sm:p-8 shadow-2xl text-center animate-scale-up">
       <div class="w-16 h-16 bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 rounded-2xl flex items-center justify-center mx-auto mb-4 text-2xl shadow-lg shadow-emerald-950/50">
         <i class="fas fa-check"></i>
       </div>
-      <h2 class="text-2xl font-black text-white mb-1">Ordine Hardware Confermato!</h2>
-      <p class="text-xs text-slate-400 mb-6">Grazie per il tuo acquisto. Il nostro reparto logistico sta preparando i tuoi componenti.</p>
+      <h2 class="text-2xl font-black text-white mb-1">Licenza CS2 Attivata!</h2>
+      <p class="text-xs text-slate-400 mb-6">Grazie per l'acquisto! La tua chiave di attivazione è pronta all'uso.</p>
 
       <div id="order-success-details"></div>
 
@@ -794,20 +807,20 @@
         <button onclick="window.print()" class="flex-1 py-3 bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold text-xs rounded-xl transition-colors flex items-center justify-center gap-2">
           <i class="fas fa-print"></i> Stampa Ricevuta
         </button>
-        <button onclick="closeOrderSuccessModal()" class="flex-1 py-3 bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs rounded-xl shadow transition-colors border border-indigo-400/30">
-          Continua
+        <button onclick="closeOrderSuccessModal()" class="flex-1 py-3 bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-400 hover:to-orange-500 text-slate-950 font-black text-xs rounded-xl shadow transition-colors border border-amber-400/40">
+          Chiudi
         </button>
       </div>
     </div>
   </div>
 
-  <!-- ======================== ADMIN: AGGIUNGI PRODOTTO MODAL (DARK) ======================== -->
+  <!-- ======================== ADMIN: AGGIUNGI PACCHETTO MODAL ======================== -->
   <div id="add-product-modal" class="fixed inset-0 bg-slate-950/85 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
     <div class="bg-slate-900 border border-slate-800 rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl relative animate-scale-up max-h-[90vh] overflow-y-auto">
       <div class="flex justify-between items-center mb-4">
         <div>
-          <h3 class="text-lg font-black text-white">Aggiungi Componente Hardware</h3>
-          <p class="text-xs text-slate-400">Inserisci i dettagli del componente o periferica</p>
+          <h3 class="text-lg font-black text-white">Aggiungi Pacchetto CS2</h3>
+          <p class="text-xs text-slate-400">Inserisci i dettagli del modulo o bundle</p>
         </div>
         <button onclick="closeAddProductModal()" class="w-8 h-8 rounded-full bg-slate-800 hover:bg-slate-700 text-slate-300 flex items-center justify-center transition-colors">
           <i class="fas fa-times"></i>
@@ -816,50 +829,50 @@
 
       <form id="add-product-form" class="space-y-3 text-xs">
         <div>
-          <label class="block font-semibold text-slate-300 mb-1">Nome Componente *</label>
-          <input type="text" name="name" required placeholder="es. Dissipatore a Liquido 240mm RGB" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-2.5 text-slate-100 focus:outline-none focus:border-cyan-400">
+          <label class="block font-semibold text-slate-300 mb-1">Nome Pacchetto *</label>
+          <input type="text" name="name" required placeholder="es. CS2 Triggerbot + Radar" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-2.5 text-slate-100 focus:outline-none focus:border-amber-400">
         </div>
 
         <div class="grid grid-cols-2 gap-3">
           <div>
             <label class="block font-semibold text-slate-300 mb-1">Categoria *</label>
-            <select name="category" required class="w-full bg-slate-950 border border-slate-800 rounded-xl p-2.5 text-slate-100 focus:outline-none focus:border-cyan-400">
-              <option value="peripherals">Periferiche & Audio</option>
-              <option value="hardware">Hardware & GPU</option>
-              <option value="monitors">Display & OLED</option>
-              <option value="setup">Accessori Setup</option>
+            <select name="category" required class="w-full bg-slate-950 border border-slate-800 rounded-xl p-2.5 text-slate-100 focus:outline-none focus:border-amber-400">
+              <option value="bundles">Pacchetti Completi (FULL)</option>
+              <option value="visuals">Visuals & Skin Changer</option>
+              <option value="combat">Aimbot & Combat</option>
+              <option value="vip">VIP Lifetime</option>
             </select>
           </div>
           <div>
             <label class="block font-semibold text-slate-300 mb-1">Prezzo (€) *</label>
-            <input type="number" step="0.01" name="price" required placeholder="89.90" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-2.5 text-slate-100 focus:outline-none focus:border-cyan-400 font-mono">
+            <input type="number" step="0.01" name="price" required placeholder="10.00" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-2.5 text-slate-100 focus:outline-none focus:border-amber-400 font-mono">
           </div>
         </div>
 
         <div class="grid grid-cols-2 gap-3">
           <div>
             <label class="block font-semibold text-slate-300 mb-1">Prezzo Barrato (€)</label>
-            <input type="number" step="0.01" name="originalPrice" placeholder="119.00" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-2.5 text-slate-100 focus:outline-none focus:border-cyan-400 font-mono">
+            <input type="number" step="0.01" name="originalPrice" placeholder="15.00" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-2.5 text-slate-100 focus:outline-none focus:border-amber-400 font-mono">
           </div>
           <div>
-            <label class="block font-semibold text-slate-300 mb-1">Pezzi in Stock</label>
-            <input type="number" name="stock" value="10" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-2.5 text-slate-100 focus:outline-none focus:border-cyan-400 font-mono">
+            <label class="block font-semibold text-slate-300 mb-1">Disponibilità Licenze</label>
+            <input type="number" name="stock" value="99" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-2.5 text-slate-100 focus:outline-none focus:border-amber-400 font-mono">
           </div>
         </div>
 
         <div>
           <label class="block font-semibold text-slate-300 mb-1">URL Immagine</label>
-          <input type="url" name="image" placeholder="https://images.unsplash.com/photo-..." class="w-full bg-slate-950 border border-slate-800 rounded-xl p-2.5 text-slate-100 focus:outline-none focus:border-cyan-400">
+          <input type="url" name="image" placeholder="https://images.unsplash.com/photo-..." class="w-full bg-slate-950 border border-slate-800 rounded-xl p-2.5 text-slate-100 focus:outline-none focus:border-amber-400">
         </div>
 
         <div>
-          <label class="block font-semibold text-slate-300 mb-1">Specifiche & Descrizione</label>
-          <textarea name="description" rows="3" placeholder="Descrivi specifiche tecniche, connettività e prestazioni..." class="w-full bg-slate-950 border border-slate-800 rounded-xl p-2.5 text-slate-100 focus:outline-none focus:border-cyan-400"></textarea>
+          <label class="block font-semibold text-slate-300 mb-1">Descrizione & Features</label>
+          <textarea name="description" rows="3" placeholder="Descrivi le funzionalità del pacchetto (ESP, Skin Changer, Aimbot, ecc.)..." class="w-full bg-slate-950 border border-slate-800 rounded-xl p-2.5 text-slate-100 focus:outline-none focus:border-amber-400"></textarea>
         </div>
 
         <div class="pt-2">
-          <button type="submit" class="w-full py-3 bg-indigo-600 hover:bg-indigo-500 text-white font-bold rounded-xl shadow transition-colors border border-indigo-400/30">
-            Aggiungi al Catalogo
+          <button type="submit" class="w-full py-3 bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-400 hover:to-orange-500 text-slate-950 font-black rounded-xl shadow transition-colors border border-amber-400/40">
+            Aggiungi al Catalogo CS2
           </button>
         </div>
       </form>

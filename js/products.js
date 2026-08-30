@@ -1,197 +1,165 @@
 /**
- * Catalogo Prodotti Elettronica, Hardware & Setup PC
+ * Catalogo Pacchetti & Tools CS2 (Counter-Strike 2)
  */
 
 const DEFAULT_PRODUCTS = [
   {
     id: 1,
-    name: "Tastiera Meccanica Custom RGB Wireless 75%",
-    category: "peripherals",
-    price: 139.99,
-    originalPrice: 169.99,
+    name: "CS2 ESP + Skin Changer",
+    category: "visuals",
+    price: 10.00,
+    originalPrice: 15.00,
     rating: 4.9,
-    reviewsCount: 148,
-    badge: "-18%",
-    badgeType: "discount",
-    image: "https://images.unsplash.com/photo-1595225476474-87563907a212?auto=format&fit=crop&w=800&q=80",
-    description: "Tastiera meccanica hot-swappable con switch lineari pre-lubrificati, gasket mount, connettività Tri-Mode (2.4GHz / Bluetooth 5.2 / Cavo Type-C) e keycaps PBT double-shot.",
+    reviewsCount: 184,
+    badge: "Bestseller",
+    badgeType: "hot",
+    image: "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=800&q=80",
+    description: "Pacchetto visual completo con Box/Glow ESP per individuare i nemici attraverso i muri e Skin Changer totale per sfoggiare qualsiasi coltello, guanto o skin StatTrak in gioco.",
     features: [
-      "Switch meccanici Hot-Swap lubrificati in fabbrica",
-      "Struttura Gasket Mount con schiuma fonoassorbente",
-      "Tri-Mode: Wireless 2.4Ghz, BT 5.2 e USB-C cablato",
-      "Illuminazione RGB personalizzabile per singolo tasto"
+      "Wallhack Box 2D/3D, Skeleton & Glow Chams personalizzabile",
+      "Skin Changer completo: tutti i coltelli (Karambit, Butterfly), guanti & agenti",
+      "Visualizzazione HP, armatura, armi impugnate e distanza nemici",
+      "100% Stream-Proof (invisibile in streaming OBS e condivisione schermo Discord)",
+      "Bypass VACnet con iniezione automatica sicura"
     ],
-    colors: ["#1e293b", "#0f172a", "#f8fafc"],
-    stock: 16,
+    colors: ["#6366f1", "#06b6d4", "#ec4899"],
+    stock: 99,
     isFeatured: true
   },
   {
     id: 2,
-    name: "Mouse Gaming Wireless Ultraleggero 49g",
-    category: "peripherals",
-    price: 89.90,
-    originalPrice: 109.90,
-    rating: 4.8,
-    reviewsCount: 92,
-    badge: "Bestseller",
+    name: "CS2 FULL Suite (Aimbot + ESP + Skin Changer + Radar)",
+    category: "bundles",
+    price: 25.00,
+    originalPrice: 35.00,
+    rating: 5.0,
+    reviewsCount: 312,
+    badge: "Pacchetto Completo",
     badgeType: "hot",
-    image: "https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?auto=format&fit=crop&w=800&q=80",
-    description: "Sensore ottico PAW3395 da 26.000 DPI reali, polling rate fino a 4000Hz, switch ottici Huano Blue Shell Pink Dot e scocca forata ultraleggera da soli 49 grammi.",
+    image: "https://images.unsplash.com/photo-1538481199705-c710c4e965fc?auto=format&fit=crop&w=800&q=80",
+    description: "La suite definitiva all-in-one per CS2. Include Legit & Rage Aimbot ad alta precisione, Full ESP, Skin Changer con tutti gli sticker/pattern e Triggerbot con RCS avanzato.",
     features: [
-      "Sensore ottico PixArt PAW3395 (26.000 DPI)",
-      "Peso piuma da soli 49 grammi bilanciati",
-      "Polling rate 4K supportato con dongle ultra-fast",
-      "Pattini in 100% PTFE vergine per massima scorrevolezza"
+      "Legit & Rage Aimbot con FOV personalizzabile, smoothing naturale e selezione hitbox",
+      "Full Visual ESP Suite (Glow, Skeleton, Box, Snaplines, Health & Bomb Timer)",
+      "Inventory & Skin Changer illimitato (tutti i coltelli, guanti, skin, seed e sticker)",
+      "Magnetic Triggerbot istantaneo & Recoil Control System (RCS) a compensazione totale",
+      "Web Radar condivisibile con i compagni di squadra in tempo reale tramite browser",
+      "Salvataggio configurazioni su Cloud e aggiornamenti 1-click"
     ],
-    colors: ["#000000", "#ffffff", "#4f46e5"],
-    stock: 24,
+    colors: ["#f59e0b", "#ef4444", "#8b5cf6"],
+    stock: 99,
     isFeatured: true
   },
   {
     id: 3,
-    name: "Scheda Grafica RTX 4070 Super 12GB OC",
-    category: "hardware",
-    price: 649.00,
-    originalPrice: 699.00,
-    rating: 5.0,
-    reviewsCount: 76,
-    badge: "Hardware Top",
-    badgeType: "hot",
-    image: "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?auto=format&fit=crop&w=800&q=80",
-    description: "GPU NVIDIA Ada Lovelace con 12GB di memoria GDDR6X, DLSS 3.5 con Frame Generation, tripla ventola assiale a cuscinetti a sfera e backplate in metallo rinforzato.",
+    name: "CS2 Skin Changer Standalone",
+    category: "visuals",
+    price: 5.00,
+    originalPrice: 8.00,
+    rating: 4.8,
+    reviewsCount: 95,
+    badge: "Super Prezzo",
+    badgeType: "discount",
+    image: "https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=800&q=80",
+    description: "Sblocca istantaneamente qualsiasi skin, coltello, guanto, musica o agente su Counter-Strike 2. Include generazione StatTrak, Pattern Seed personalizzabili e applicazione di 4 o 5 sticker su qualsiasi arma.",
     features: [
-      "12GB memoria GDDR6X ad altissima velocità",
-      "Supporto DLSS 3.5 & Full Ray Tracing avanzato",
-      "Sistema di raffreddamento a tripla ventola silenziosa",
-      "Uscite video: 3x DisplayPort 1.4a, 1x HDMI 2.1a"
+      "Tutti i coltelli sbloccati (Karambit Doppler, Butterfly Fade, M9 Lore, ecc.)",
+      "Guanti sportivi e specialistici con float personalizzato (da 0.0001 a 1.00)",
+      "Applicazione libera di qualsiasi sticker anche olografico o dorato",
+      "Modifica modelli agenti CT & T in-game",
+      "Zero impatto su FPS e stabilità di gioco"
     ],
-    colors: ["#18181b", "#3f3f46"],
-    stock: 7,
-    isFeatured: true
+    colors: ["#10b981", "#3b82f6"],
+    stock: 99,
+    isFeatured: false
   },
   {
     id: 4,
-    name: "Monitor Gaming 27\" OLED QHD 240Hz 0.03ms",
-    category: "monitors",
-    price: 799.00,
-    originalPrice: 899.00,
+    name: "CS2 Legit Aim + Triggerbot",
+    category: "combat",
+    price: 12.00,
+    originalPrice: 18.00,
     rating: 4.9,
-    reviewsCount: 54,
-    badge: "OLED Pro",
-    badgeType: "discount",
-    image: "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?auto=format&fit=crop&w=800&q=80",
-    description: "Pannello QD-OLED con risoluzione 2560x1440, refresh rate fluido da 240Hz, tempo di risposta fulmineo di 0.03ms, neri perfetti e compatibilità G-Sync / FreeSync Premium Pro.",
+    reviewsCount: 142,
+    badge: "Legit Pro",
+    badgeType: "hot",
+    image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=800&q=80",
+    description: "Modulo di combattimento ultra-legit progettato per Premier e Matchmaking competitivo. Movimenti del mirino umanizzati invisibili anche agli spettatori e Triggerbot magnetico a risposta millimetrica.",
     features: [
-      "Pannello OLED con contrasto infinito e neri assoluti",
-      "Refresh rate 240Hz con tempo di risposta 0.03ms GtG",
-      "Copertura colore DCI-P3 99% & HDR True Black 400",
-      "Supporto ergonomico regolabile in altezza e pivot"
+      "Smoothing del mirino personalizzabile con curve di movimento umane",
+      "Targeting selettivo (Testa, Collo, Torace) con ritardo di reazione regolabile",
+      "Triggerbot magnetico ultra-reattivo (attivazione automatica al passaggio del mirino)",
+      "Standalone RCS (Recoil Control System) per spray perfetto di AK-47, M4A1-S, ecc.",
+      "Configurazioni specifiche per singola arma salvabili in preset"
     ],
-    colors: ["#09090b"],
-    stock: 5,
+    colors: ["#ef4444", "#f97316"],
+    stock: 99,
     isFeatured: true
   },
   {
     id: 5,
-    name: "SSD NVMe M.2 2TB PCIe 4.0 (7400 MB/s)",
-    category: "hardware",
-    price: 154.50,
-    originalPrice: 179.00,
-    rating: 4.9,
-    reviewsCount: 110,
-    badge: "Alta Velocità",
-    badgeType: "hot",
-    image: "https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?auto=format&fit=crop&w=800&q=80",
-    description: "Unità a stato solido M.2 NVMe Gen4 con velocità di lettura sequenziale fino a 7400 MB/s e scrittura fino a 6800 MB/s. Include dissipatore termico passivo in grafene.",
+    name: "CS2 Web Radar & Sound ESP",
+    category: "visuals",
+    price: 7.99,
+    originalPrice: 12.00,
+    rating: 4.7,
+    reviewsCount: 78,
+    badge: "Team Hack",
+    badgeType: "new",
+    image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=80",
+    description: "Radar 2D accessibile tramite link web sicuro e visualizzabile su un secondo schermo, tablet o smartphone. Condividi il link con i tuoi compagni di team per coordinare le giocate con mappa interattiva.",
     features: [
-      "Velocità sequenziale: Lettura 7400 MB/s, Scrittura 6800 MB/s",
-      "Controller a 8 canali con DRAM Cache LPDDR4 integrata",
-      "Compatibile con PC Gaming Desktop, Laptop e PS5",
-      "Durabilità garantita fino a 1400 TBW"
+      "Visualizzazione in tempo reale della posizione di tutti i nemici sulla mappa",
+      "Condivisione istantanea tramite link protetto ai tuoi compagni di squadra",
+      "Indicatori di posizionamento C4, timer di defuse e armi cadute a terra",
+      "Sound ESP 3D direzionale con indicatori visivi di passi e spari nemici",
+      "Funzionamento esterno senza overlay intrusivi sul gioco principale"
     ],
-    colors: ["#18181b"],
-    stock: 28,
+    colors: ["#06b6d4", "#3b82f6"],
+    stock: 99,
     isFeatured: false
   },
   {
     id: 6,
-    name: "Cuffie Gaming Studio Wireless con Microfono Broadcast",
-    category: "peripherals",
-    price: 169.00,
-    originalPrice: 199.00,
-    rating: 4.8,
-    reviewsCount: 83,
-    badge: "-15%",
-    badgeType: "discount",
-    image: "https://images.unsplash.com/photo-1546435770-a3e426bf472b?auto=format&fit=crop&w=800&q=80",
-    description: "Driver magnetici planari da 50mm per una fedeltà audio spaziale cristallina, microfono a capsula condensatore da 9.7mm retrattile e autonomia fino a 50 ore.",
-    features: [
-      "Audio Spaziale 7.1 Surround & Driver Hi-Res 50mm",
-      "Microfono cardioide rimovibile con cancellazione rumore AI",
-      "Padiglioni in memory foam traspirante ad alto isolamento",
-      "Connettività 2.4GHz lossless a latenza zero (<15ms)"
-    ],
-    colors: ["#111827", "#1e1b4b"],
-    stock: 12,
-    isFeatured: false
-  },
-  {
-    id: 7,
-    name: "Dissipatore a Liquido AIO 360mm con Display LCD",
-    category: "hardware",
-    price: 219.00,
-    originalPrice: 249.00,
-    rating: 4.9,
-    reviewsCount: 47,
-    badge: "Top Raffreddamento",
+    name: "CS2 Lifetime VIP Pass (Accesso Illimitato a Vita)",
+    category: "vip",
+    price: 49.99,
+    originalPrice: 79.99,
+    rating: 5.0,
+    reviewsCount: 220,
+    badge: "VIP Lifetime",
     badgeType: "hot",
-    image: "https://images.unsplash.com/photo-1587202372634-32705e3bf49c?auto=format&fit=crop&w=800&q=80",
-    description: "Raffreddamento a liquido all-in-one con radiatore da 360mm, 3 ventole ARGB silenziose ad alta pressione statica e display IPS LCD da 2.4\" per monitorare temperature e GIF personalizzate.",
+    image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80",
+    description: "Licenza a vita con accesso illimitato a tutti i moduli presenti e futuri (Full Suite, ESP, Skin Changer, Radar, Aimbot), con build privata compilata singolarmente e supporto prioritario 24/7.",
     features: [
-      "Display IPS LCD 2.4 pollici personalizzabile con software",
-      "Pompa ceramica ad alte prestazioni di 7ª generazione",
-      "3 ventole PWM ARGB da 120mm con connettori magnetici daisy-chain",
-      "Compatibilità universale con socket Intel LGA1700/1851 e AMD AM5"
+      "Accesso a vita senza abbonamento o canoni mensili",
+      "Build privata con hash e firma polimorfa per massima sicurezza",
+      "Aggiornamenti automatici prioritari rilasciati in pochi minuti dopo ogni patch",
+      "Ruolo e canale VIP esclusivo su Discord con assistenza diretta 24/7",
+      "Tutti i futuri tools e aggiornamenti di CS2 inclusi gratuitamente"
     ],
-    colors: ["#0f172a", "#f8fafc"],
-    stock: 9,
-    isFeatured: false
-  },
-  {
-    id: 8,
-    name: "Screenbar Lampada per Monitor LED RGB Asimmetrica",
-    category: "setup",
-    price: 49.90,
-    originalPrice: 65.00,
-    rating: 4.7,
-    reviewsCount: 68,
-    badge: "Setup Must-Have",
-    badgeType: "new",
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80",
-    description: "Barra luminosa per monitor con illuminazione asimmetrica antiriflesso sul display, luce ambientale RGB posteriore sincronizzabile e controllo wireless touch rotativo.",
-    features: [
-      "Ottica asimmetrica che non riflette luce sullo schermo",
-      "Regolazione continua temperatura colore (2700K - 6500K)",
-      "Aura RGB posteriore per ridurre l'affaticamento visivo",
-      "Manopola wireless di precisione per controllo istantaneo"
-    ],
-    colors: ["#18181b", "#71717a"],
-    stock: 20,
+    colors: ["#fbbf24", "#f59e0b", "#6366f1"],
+    stock: 50,
     isFeatured: true
   }
 ];
 
+const STORAGE_KEY = 'store_cs2_products_v3';
+
 // Helper per ottenere i prodotti dal localStorage o dai default
 function getProducts() {
-  const saved = localStorage.getItem('store_tech_products_v2');
+  const saved = localStorage.getItem(STORAGE_KEY);
   if (saved) {
     try {
-      return JSON.parse(saved);
+      const parsed = JSON.parse(saved);
+      if (Array.isArray(parsed) && parsed.length > 0) {
+        return parsed;
+      }
     } catch (e) {
-      console.error("Errore nel parsing dei prodotti:", e);
+      console.error("Errore nel parsing dei prodotti CS2:", e);
     }
   }
-  localStorage.setItem('store_tech_products_v2', JSON.stringify(DEFAULT_PRODUCTS));
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(DEFAULT_PRODUCTS));
   return DEFAULT_PRODUCTS;
 }
 
@@ -207,26 +175,26 @@ function addProduct(productData) {
   const newProduct = {
     id: Date.now(),
     name: productData.name,
-    category: productData.category || 'peripherals',
+    category: productData.category || 'bundles',
     price: parseFloat(productData.price),
     originalPrice: productData.originalPrice ? parseFloat(productData.originalPrice) : null,
     rating: 5.0,
     reviewsCount: 1,
-    badge: productData.badge || "Nuovo Arrivo",
+    badge: productData.badge || "Nuovo Pacchetto",
     badgeType: productData.badgeType || "new",
-    image: productData.image || "https://images.unsplash.com/photo-1595225476474-87563907a212?auto=format&fit=crop&w=800&q=80",
-    description: productData.description || "Componente hardware ad alte prestazioni.",
-    features: productData.features || ["Garanzia ufficiale 2 anni", "Spedizione rapida in 24/48h"],
-    stock: parseInt(productData.stock, 10) || 10,
+    image: productData.image || "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=800&q=80",
+    description: productData.description || "Pacchetto CS2 ad alte prestazioni.",
+    features: productData.features || ["Consegna digitale istantanea", "100% Undetected & Auto-Update", "Guida all'installazione inclusa"],
+    stock: parseInt(productData.stock, 10) || 99,
     isFeatured: productData.isFeatured || false
   };
   products.unshift(newProduct);
-  localStorage.setItem('store_tech_products_v2', JSON.stringify(products));
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(products));
   return newProduct;
 }
 
 // Helper per resettare i prodotti ai valori predefiniti
 function resetProductsToDefault() {
-  localStorage.setItem('store_tech_products_v2', JSON.stringify(DEFAULT_PRODUCTS));
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(DEFAULT_PRODUCTS));
   return DEFAULT_PRODUCTS;
 }
