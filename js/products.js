@@ -76,8 +76,8 @@ const DEFAULT_PRODUCTS = [
     id: 4,
     name: "CS2 Legit Aim + Triggerbot",
     category: "combat",
-    price: 12.00,
-    originalPrice: 18.00,
+    price: 15.00,
+    originalPrice: 20.00,
     rating: 4.9,
     reviewsCount: 142,
     badge: "Legit Pro",
@@ -97,7 +97,7 @@ const DEFAULT_PRODUCTS = [
   }
 ];
 
-const STORAGE_KEY = 'store_cs2_products_v4';
+const STORAGE_KEY = 'store_cs2_products_v5';
 
 // Helper per ottenere i prodotti dal localStorage o dai default
 function getProducts() {

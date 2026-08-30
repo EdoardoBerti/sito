@@ -7,7 +7,7 @@ Store e-commerce interattivo e moderno dedicato alla vendita di pacchetti e tool
 - 🎯 **CS2 ESP + Skin Changer (€10.00)**: Wallhack Box 2D/3D, Glow Chams, Skeleton e sblocco totale di tutti i coltelli, guanti e skin StatTrak.
 - ⚡ **CS2 FULL Suite (€25.00)**: Pacchetto completo con Legit & Rage Aimbot, Full ESP, Skin Changer illimitato, Magnetic Triggerbot e RCS avanzato.
 - 🔪 **CS2 Skin Changer Standalone (€5.00)**: Sblocco coltelli Doppler/Fade, guanti sportivi e sticker 4x.
-- 🎯 **CS2 Legit Aim + Triggerbot (€12.00)**: Smoothing umano invisibile, target hitbox e RCS integrato.
+- 🎯 **CS2 Legit Aim + Triggerbot (€15.00)**: Smoothing umano invisibile, target hitbox e RCS integrato.
 
 ## 🚀 Funzionalità del Sito
 
