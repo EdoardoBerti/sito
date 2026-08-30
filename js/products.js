@@ -28,7 +28,7 @@ const DEFAULT_PRODUCTS = [
   },
   {
     id: 2,
-    name: "CS2 FULL Suite (Aimbot + ESP + Skin Changer + Radar)",
+    name: "CS2 FULL Suite (Aimbot + ESP + Skin Changer + Triggerbot)",
     category: "bundles",
     price: 25.00,
     originalPrice: 35.00,
@@ -43,7 +43,6 @@ const DEFAULT_PRODUCTS = [
       "Full Visual ESP Suite (Glow, Skeleton, Box, Snaplines, Health & Bomb Timer)",
       "Inventory & Skin Changer illimitato (tutti i coltelli, guanti, skin, seed e sticker)",
       "Magnetic Triggerbot istantaneo & Recoil Control System (RCS) a compensazione totale",
-      "Web Radar condivisibile con i compagni di squadra in tempo reale tramite browser",
       "Salvataggio configurazioni su Cloud e aggiornamenti 1-click"
     ],
     colors: ["#f59e0b", "#ef4444", "#8b5cf6"],
@@ -95,56 +94,10 @@ const DEFAULT_PRODUCTS = [
     colors: ["#ef4444", "#f97316"],
     stock: 99,
     isFeatured: true
-  },
-  {
-    id: 5,
-    name: "CS2 Web Radar & Sound ESP",
-    category: "visuals",
-    price: 7.99,
-    originalPrice: 12.00,
-    rating: 4.7,
-    reviewsCount: 78,
-    badge: "Team Hack",
-    badgeType: "new",
-    image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=80",
-    description: "Radar 2D accessibile tramite link web sicuro e visualizzabile su un secondo schermo, tablet o smartphone. Condividi il link con i tuoi compagni di team per coordinare le giocate con mappa interattiva.",
-    features: [
-      "Visualizzazione in tempo reale della posizione di tutti i nemici sulla mappa",
-      "Condivisione istantanea tramite link protetto ai tuoi compagni di squadra",
-      "Indicatori di posizionamento C4, timer di defuse e armi cadute a terra",
-      "Sound ESP 3D direzionale con indicatori visivi di passi e spari nemici",
-      "Funzionamento esterno senza overlay intrusivi sul gioco principale"
-    ],
-    colors: ["#06b6d4", "#3b82f6"],
-    stock: 99,
-    isFeatured: false
-  },
-  {
-    id: 6,
-    name: "CS2 Lifetime VIP Pass (Accesso Illimitato a Vita)",
-    category: "vip",
-    price: 49.99,
-    originalPrice: 79.99,
-    rating: 5.0,
-    reviewsCount: 220,
-    badge: "VIP Lifetime",
-    badgeType: "hot",
-    image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80",
-    description: "Licenza a vita con accesso illimitato a tutti i moduli presenti e futuri (Full Suite, ESP, Skin Changer, Radar, Aimbot), con build privata compilata singolarmente e supporto prioritario 24/7.",
-    features: [
-      "Accesso a vita senza abbonamento o canoni mensili",
-      "Build privata con hash e firma polimorfa per massima sicurezza",
-      "Aggiornamenti automatici prioritari rilasciati in pochi minuti dopo ogni patch",
-      "Ruolo e canale VIP esclusivo su Discord con assistenza diretta 24/7",
-      "Tutti i futuri tools e aggiornamenti di CS2 inclusi gratuitamente"
-    ],
-    colors: ["#fbbf24", "#f59e0b", "#6366f1"],
-    stock: 50,
-    isFeatured: true
   }
 ];
 
-const STORAGE_KEY = 'store_cs2_products_v3';
+const STORAGE_KEY = 'store_cs2_products_v4';
 
 // Helper per ottenere i prodotti dal localStorage o dai default
 function getProducts() {
